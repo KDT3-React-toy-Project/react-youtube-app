@@ -1,70 +1,62 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+# :sparkles: [Youtube Clone Toy Project (Demo)]()
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+로컬서버 [http://localhost:3000] 오픈
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br/><br/>
 
-### `npm test`
+## :page_with_curl: 설치된 라이브러리
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ["@tanstack/react-query": "^4.22.0"](https://tanstack.com/query/latest/docs/react/overview)
+  - `useQuery` 사용
+- "axios": "^1.2.2"
+  - api과 통신하기 위한 라이브러리
+- ["react-icons": "^4.7.1"](https://react-icons.github.io/react-icons)
+  - 필요한 아이콘을 검색한 후 아이콘을 클릭하여 복사하고 프로젝트에 사용
+  - 사용예시 :point_right:<br/>
+    <img src="https://i.ibb.co/09MnYzG/2023-01-16-113151.png" alt="2023-01-16-113151" border="0">
+- ["react-router-dom": "^6.6.2"](https://reactrouter.com/en/main)
+- ["timeago.js": "^4.0.2"](https://www.npmjs.com/package/timeago.js/v/4.0.0-beta.3)
+  - 업로드 날짜를 보여주는 라이브러리
+  - 적용예시 :point_right:<br/>
+    <img src="https://i.ibb.co/JvJ3Ssv/2023-01-16-114404.png" alt="2023-01-16-114404" border="0">
+- ["tailwindcss": "^3.2.4"](https://tailwindcss.com/docs/installation)
+  - css 라이브러리
+  - 초기 설정 (tailwind.config.js)
+    - 사용예시
+      - colors :point_right:<br/>
+        <img src="https://i.ibb.co/4m2ww4d/2023-01-16-120127.png" alt="2023-01-16-120127" border="0">
+      - plugins :point_right: n줄 이상 넘어가면 텍스트 숨김처리<br/>
+        <img src="https://i.ibb.co/L19h8cd/2023-01-16-120116.png" alt="2023-01-16-120116" border="0">
+- "dotenv": "^16.0.3"
+  - apikey 숨김. `REACT_APP_API_KEY`로 apikey 사용
 
-### `npm run build`
+<br/><br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :pushpin: 기능 구현 목록
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Header
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [ ] 로고
+  - 클릭 시, 홈으로 이동
+- [ ] 검색창
+  - 해당 제목으로 영상 검색
 
-### `npm run eject`
+### HOME
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [ ] 영상 목록 (public -> videos -> popular.json 목업데이터 우선 사용)
+- [ ] 영상 클릭 시, 해당 영상 VideoDetail 페이지로 넘어감.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### VideoDetail
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [ ] 영상
+- [ ] 영상 제목
+- [ ] 채널명
+- [ ] 영상 상세 설명
+- [ ] 관련 영상 목록
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 기타
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] 화면 렌더링 중일땐 `Loading...` 출력
+- [ ] 페이지에 에러 발생 시, NotFound 페이지로 넘어감.
