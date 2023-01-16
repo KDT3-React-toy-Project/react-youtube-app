@@ -21,14 +21,6 @@
   - 업로드 날짜를 보여주는 라이브러리
   - 적용예시 :point_right:<br/>
     <img src="https://i.ibb.co/JvJ3Ssv/2023-01-16-114404.png" alt="2023-01-16-114404" border="0">
-- ["tailwindcss": "^3.2.4"](https://tailwindcss.com/docs/installation)
-  - css 라이브러리
-  - 초기 설정 (tailwind.config.js)
-    - 사용예시
-      - colors :point_right:<br/>
-        <img src="https://i.ibb.co/4m2ww4d/2023-01-16-120127.png" alt="2023-01-16-120127" border="0">
-      - plugins :point_right: n줄 이상 넘어가면 텍스트 숨김처리<br/>
-        <img src="https://i.ibb.co/L19h8cd/2023-01-16-120116.png" alt="2023-01-16-120116" border="0">
 - "dotenv": "^16.0.3"
   - apikey 숨김. `REACT_APP_API_KEY`로 apikey 사용
 
