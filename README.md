@@ -1,4 +1,4 @@
-# :sparkles: [Youtube Clone Toy Project (Demo)](https://kdt3-7team-react-youtube-app.netlify.app)
+# :sparkles: [Youtube Clone Toy Project (Demo)](https://kdt3-team7-react-youtube-app.netlify.app)
 
 ### `npm start`
 
