@@ -1,0 +1,7 @@
+.mainGallery {
+  // width: 100%;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(274px, 1fr));
+  gap: 1rem;
+}

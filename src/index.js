@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Videos from "./pages/Videos";
 import VideoDetail from "./pages/VideoDetail";
+import Feed from "./components/Feed/Feed";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: "videos", element: <Videos /> },
       { path: "videos/:keyword", element: <Videos /> },
       { path: "videos/watch/:videoId", element: <VideoDetail /> },
+      { path: "main", element: <Feed /> },
     ],
   },
 ]);
