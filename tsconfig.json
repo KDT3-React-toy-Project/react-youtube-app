@@ -1,24 +1,20 @@
 {
-  "compileOnSave": true,
   "compilerOptions": {
-    "target": "es2016",
-    "jsx": "react-jsx",
-    "module": "esnext",
-    "sourceMap": true,
-    "removeComments": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "outDir": "./build/",
+    "baseUrl": "./",
     "skipLibCheck": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "noEmit": true,
+    "noImplicitAny": false,
+    "downlevelIteration": true,
+    "lib": ["es6", "es2019.array", "dom"],
+    "rootDir": "src",
+    "module": "commonjs",
+    "target": "es5",
     "allowSyntheticDefaultImports": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "allowJs": true,
+    "jsx": "react-jsx"
   },
-  "include": ["./src/"],
-  "exclude": ["node_modules/*"]
+  "include": ["./src/**/*", "./custom.d.ts"],
+  "exclude": ["node_modules"]
 }
