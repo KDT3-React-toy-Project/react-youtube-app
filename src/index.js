@@ -1,30 +1,30 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.scss";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import NotFound from "./pages/NotFound";
-import Videos from "./pages/Videos";
-import VideoDetail from "./pages/VideoDetail";
-import Feed from "./components/Feed/Feed";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.scss';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import NotFound from './pages/NotFound';
+import Videos from './pages/Videos';
+import VideoDetail from './pages/VideoDetail';
+import Feed from './components/Feed/Feed';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     errorElement: <NotFound />,
     children: [
       { index: true, element: <Videos /> },
-      { path: "videos", element: <Videos /> },
-      { path: "videos/:keyword", element: <Videos /> },
-      { path: "videos/watch/:videoId", element: <VideoDetail /> },
-      { path: "main", element: <Feed /> },
+      { path: 'videos', element: <Videos /> },
+      { path: 'videos/:keyword', element: <Videos /> },
+      { path: 'videos/watch/:videoId', element: <VideoDetail /> },
+      { path: 'main', element: <Feed /> },
     ],
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<RouterProvider router={router} />);
 
 // If you want to start measuring performance in your app, pass a function
