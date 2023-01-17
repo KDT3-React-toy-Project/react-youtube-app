@@ -16,8 +16,8 @@ export const getSearchData = async (title: string) => {
   try {
     const response = await axios.get(`/search?part=snippet&maxResults=10&q=${title}`);
     return response;
-  } catch (error) {
-    // console.error(error.message);
+  } catch (error: any) {
+    console.error(error.message);
   }
 };
 
@@ -28,8 +28,8 @@ export const getVideoDetail = async (videoId: string) => {
       `/videos?part=snippet&part=contentDetails&part=player&part=statistics&id=${videoId}`,
     );
     return response;
-  } catch (error) {
-    // console.error(error.message);
+  } catch (error: any) {
+    console.error(error.message);
   }
 };
 
@@ -38,8 +38,8 @@ export const getChannelInfo = async (channelId: string) => {
   try {
     const response = await axios.get(`/channels?part=snippet&part=statistics&part=contentDetails&id=${channelId}`);
     return response;
-  } catch (error) {
-    // console.error(error.message);
+  } catch (error: any) {
+    console.error(error.message);
   }
 };
 
@@ -48,8 +48,8 @@ export const getComment = async (videoId: string) => {
   try {
     const response = await axios.get(`/commentThreads?part=snippet&videoId=${videoId}`);
     return response;
-  } catch (error) {
-    // console.error(error.message);
+  } catch (error: any) {
+    console.error(error.message);
   }
 };
 
@@ -58,7 +58,7 @@ export const getRelationVideo = async (videoId: string) => {
   try {
     const response = await axios.get(`/search?part=snippet&maxResults=10&relatedToVideoId=${videoId}&type=video`);
     return response;
-  } catch (error) {
-    // console.error(error.message);
+  } catch (error: any) {
+    console.error(error.message);
   }
 };
