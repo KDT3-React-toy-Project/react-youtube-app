@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './VideoCard.scss';
 import { FiMoreVertical } from 'react-icons/fi';
-import { format, render, cancel, register } from 'timeago.js';
 import axios from 'axios';
 
 export default function VideoCard() {
@@ -16,18 +15,7 @@ export default function VideoCard() {
     getData();
   }, []);
 
-  // // format timestamp
-  // format(1544666010224);
-  // // format date instance
-  // format(new Date(1544666010224));
-  // // format date string
-  // format('2018-12-12');
-  // // format with locale
-  // format(1544666010224, 'zh_CN');
-  // // format with locale and relative date
-  // format(1544666010224, 'zh_CN', '2018-11-11');
-  // // e.g.
-  // format(Date.now() - 11 * 1000 * 60 * 60); // returns '11 hours ago'
+  console.log('datas', datas);
 
   return (
     <>
@@ -41,7 +29,7 @@ export default function VideoCard() {
           </div>
           <div className="videoInfoContainer">
             <div className="avatarContainer">
-              <img src="https://cdn.pixabay.com/photo/2016/07/03/18/36/youtube-1495277_960_720.png" alt="" />
+              <img src={data.snippet.thumbnails.medium.url} alt={data.snippet.title} />
             </div>
             <div className="videoTextContainer">
               <h4>{data.snippet.title}</h4>
@@ -50,7 +38,7 @@ export default function VideoCard() {
                 <div className="metaTag">
                   <span>{data.statistics.likeCount} views</span>
                   <span className="dot_separator"> • </span>
-                  <span>{}</span>
+                  <span>{data.snippet.publishedAt}</span>
                 </div>
               </div>
             </div>
