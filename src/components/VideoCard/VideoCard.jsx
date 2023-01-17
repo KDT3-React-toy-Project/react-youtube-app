@@ -1,5 +1,6 @@
 import React from "react";
 import "./VideoCard.scss";
+import { FiMoreVertical } from "react-icons";
 
 export default function VideoCard() {
   return (
@@ -21,7 +22,9 @@ export default function VideoCard() {
             <div className="metatag">metatag</div>
           </div>
         </div>
-        <div className="dotContainer">...</div>
+        <div className="dotContainer">
+          <FiMoreVertical />
+        </div>
       </div>
     </div>
   );

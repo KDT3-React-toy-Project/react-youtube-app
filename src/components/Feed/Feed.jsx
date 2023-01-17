@@ -6,6 +6,7 @@ const Feed = () => {
   useEffect(() => {
     const getData = async () => {
       const res = await axios.get("./videos/channel.json");
+      console.log(res);
     };
     getData();
   }, []);
