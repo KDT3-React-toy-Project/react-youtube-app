@@ -9,8 +9,10 @@ function App() {
   return (
     <>
       <Header setDisplay={setDisplay}/>
-      <Nav display={display}/>
-      <Outlet />
+      <div className="contents">
+        <Nav display={display}/>
+        <Outlet />
+      </div>
     </>
   );
 }
