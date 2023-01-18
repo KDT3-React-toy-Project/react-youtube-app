@@ -11,32 +11,32 @@
     <tr>
       <td align="center" width="150px">
         <img width="100%" src="https://avatars.githubusercontent.com/u/103119275?v=4"  alt=""/>
-        <br/>
         <center>FE. 팀원</center>
+        <br/>
         <a href="https://github.com/Hyeeeein">
           <img src="https://img.shields.io/badge/김혜인-2596be?style=flat-round&logo=GitHub&logoColor=white"/>
         </a>
       </br>
       <td align="center" width="150px">
         <img width="100%" src="https://avatars.githubusercontent.com/u/103406196?v=4"  alt=""/>
-        <br/>
         <center>FE. 팀원</center>
+        <br/>
         <a href="https://github.com/hyorimcho">
           <img src="https://img.shields.io/badge/조효림-e28743?style=flat-round&logo=GitHub&logoColor=white"/>
         </a>
       </td>
       <td align="center" width="150px">
         <img width="100%" src="https://avatars.githubusercontent.com/u/76930602?v=4"  alt=""/>
-        <br/>
         <center>FE. 팀원</center>
+        <br/>
         <a href="https://github.com/0nesan">
           <img src="https://img.shields.io/badge/한수산-96be25?style=flat-round&logo=GitHub&logoColor=white"/>
         </a>
       </td>
       <td align="center" width="150px">
         <img width="100%" src="https://avatars.githubusercontent.com/u/64674174?v=4"  alt=""/>
-        <br/>
         <center>FE. 팀원</center>
+        <br/>
         <a href="https://github.com/hyerimhan">
           <img src="https://img.shields.io/badge/한혜림-FF55B6?style=flat-round&logo=GitHub&logoColor=white"/>
         </a>
