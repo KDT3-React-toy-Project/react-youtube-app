@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { viewCountConverter } from 'src/util/viewCountConverter';
 import './RelatedVideos.scss';
 
 const RelatedVideos = ({ videoId, relationVideos }) => {
   console.log(relationVideos);
+  // '영상시간'에 쓰시면 돼요! ytDurationFormat(데이터)요렇게 호출하시면 됩니다
+  // const ytDurationFormat = require('youtube-duration-format');
 
   return (
     <ul className="relatedVideos">
@@ -25,7 +28,8 @@ const RelatedVideos = ({ videoId, relationVideos }) => {
                   <div>{video.snippet.channelTitle}</div>
                 </Link>
                 <div className="etc">
-                  <span>조회수 없음</span>&nbsp;<span> • </span>&nbsp;<span>{video.snippet.publishedAt}</span>
+                  <span>조회수 없음</span>&nbsp;<span> • </span>&nbsp;
+                  <span>{viewCountConverter(video.snippet.publishedAt)}</span>
                 </div>
               </div>
             </div>
