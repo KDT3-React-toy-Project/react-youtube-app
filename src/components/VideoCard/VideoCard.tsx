@@ -7,6 +7,7 @@ import { uploadedDate } from "src/util/uploadedDate";
 
 export default function VideoCard() {
   const [datas, setDatas] = useState([]);
+  const ytDurationFormat = require('youtube-duration-format')
 
   useEffect(() => {
     const getData = async () => {
@@ -25,7 +26,7 @@ export default function VideoCard() {
         <li className="videoCard" key={data.id}>
           <div className="videoPreview">
             <img src={data.snippet.thumbnails.medium.url} alt={data.snippet.title} />
-            <span className="videoDuration">{data.contentDetails.duration}</span>
+            <span className="videoDuration">{ytDurationFormat(data.contentDetails.duration)}</span>
           </div>
           <div className="videoInfoContainer">
             <div className="avatarContainer">
