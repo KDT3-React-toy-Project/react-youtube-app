@@ -4,7 +4,7 @@
 
 로컬서버 [http://localhost:3000] 오픈
 
-<br/><br/>
+### 프로젝트 문서는[여기](https://docs.google.com/spreadsheets/d/1EhoF12aqxV7dyYcOJNbmAZO6rkJGMgtNTbrpR0zFBcM/edit#gid=0)에서 확인하실 수 있습니다.
 
 ## :page_with_curl: 설치된 라이브러리
 
