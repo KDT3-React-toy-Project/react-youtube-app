@@ -1,0 +1,11 @@
+.vd_videoDetail {
+  padding: 3rem;
+  display: flex;
+}
+#vd_videoWrap {
+  width: 70vw;
+  height: calc(70vw * 9 / 16);
+}
+.vd_videoDetail #playerWrap .ytp-impression-link {
+  display: none;
+}

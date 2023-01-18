@@ -6,6 +6,9 @@ import App from './App';
 import NotFound from './pages/NotFound/NotFound';
 import Videos from './pages/Videos/Videos';
 import VideoDetail from './pages/VideoDetail/VideoDetail';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -22,4 +25,8 @@ const router = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-root.render(<RouterProvider router={router} />);
+root.render(
+  <QueryClientProvider client={queryClient}>
+    <RouterProvider router={router} />
+  </QueryClientProvider>,
+);
