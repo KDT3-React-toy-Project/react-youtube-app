@@ -52,9 +52,9 @@
 <br/>
 
 ### Tools
-- <div style="display:flex; align-items: center; margin-right:10px;"><span style="margin-right: 5px">Deploy</span><img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat-round&logo=Netlify&logoColor=white"/></div>
-- <div style="display:flex; align-items: center;"><span style="margin-right: 5px">버전관리 </span><img src="https://img.shields.io/badge/GitHub-181717?style=flat-round&logo=GitHub&logoColor=white"/></div>
-- <div style="display:flex; align-items: center;"><span style="margin-right: 5px">Docs </span><img src="https://img.shields.io/badge/Google Sheets-34A853?style=flat-round&logo=Google Sheets&logoColor=white"/></div>
+- <div style="display:flex; align-items: center; margin-right:10px;"><span>Deploy </span><img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat-round&logo=Netlify&logoColor=white"/></div>
+- <div style="display:flex; align-items: center;"><span>버전관리 </span><img src="https://img.shields.io/badge/GitHub-181717?style=flat-round&logo=GitHub&logoColor=white"/></div>
+- <div style="display:flex; align-items: center;"><span>Docs </span><img src="https://img.shields.io/badge/Google Sheets-34A853?style=flat-round&logo=Google Sheets&logoColor=white"/></div>
 
 <br/><br/>
 
