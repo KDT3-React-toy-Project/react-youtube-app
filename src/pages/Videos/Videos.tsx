@@ -2,9 +2,9 @@ import VideoCard from 'src/components/VideoCard/VideoCard';
 import './Videos.scss';
 const Videos = () => {
   return (
-    <div className="mainGallery">
+    <ul className="mainGallery">
       <VideoCard />
-    </div>
+    </ul>
   );
 };
 

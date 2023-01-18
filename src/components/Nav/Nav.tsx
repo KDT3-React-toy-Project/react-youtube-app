@@ -2,7 +2,7 @@
 
 function Nav({display : boolean}) {
   return (
-    <div>Nav</div>
+    <div className="nav">Nav</div>
   )
 }
 
