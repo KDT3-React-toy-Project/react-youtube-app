@@ -1,8 +1,60 @@
 # :sparkles: [Youtube Clone Toy Project (Demo)](https://kdt3-team7-react-youtube-app.netlify.app)
 
-### `npm start`
+#### 프로젝트 문서는 [여기](https://docs.google.com/spreadsheets/d/1EhoF12aqxV7dyYcOJNbmAZO6rkJGMgtNTbrpR0zFBcM/edit#gid=0)에서 확인하실 수 있습니다.
 
-로컬서버 [http://localhost:3000] 오픈
+<br/><br/>
+
+## :raising_hand: Member
+
+<table border>
+  <tbody>
+    <tr>
+      <td align="center" width="150px">
+        <img width="100%" src="https://avatars.githubusercontent.com/u/103119275?v=4"  alt=""/>
+        <center>FE. 팀원</center>
+        <br/>
+        <a href="https://github.com/Hyeeeein">
+          <img src="https://img.shields.io/badge/김혜인-2596be?style=flat-round&logo=GitHub&logoColor=white"/>
+        </a>
+      </br>
+      <td align="center" width="150px">
+        <img width="100%" src="https://avatars.githubusercontent.com/u/103406196?v=4"  alt=""/>
+        <center>FE. 팀원</center>
+        <br/>
+        <a href="https://github.com/hyorimcho">
+          <img src="https://img.shields.io/badge/조효림-e28743?style=flat-round&logo=GitHub&logoColor=white"/>
+        </a>
+      </td>
+      <td align="center" width="150px">
+        <img width="100%" src="https://avatars.githubusercontent.com/u/76930602?v=4"  alt=""/>
+        <center>FE. 팀원</center>
+        <br/>
+        <a href="https://github.com/0nesan">
+          <img src="https://img.shields.io/badge/한수산-96be25?style=flat-round&logo=GitHub&logoColor=white"/>
+        </a>
+      </td>
+      <td align="center" width="150px">
+        <img width="100%" src="https://avatars.githubusercontent.com/u/64674174?v=4"  alt=""/>
+        <center>FE. 팀원</center>
+        <br/>
+        <a href="https://github.com/hyerimhan">
+          <img src="https://img.shields.io/badge/한혜림-FF55B6?style=flat-round&logo=GitHub&logoColor=white"/>
+        </a>
+      </td>
+     </tr>
+  </tbody>
+</table>
+
+<br/><br/>
+
+## :wrench: 기술 스택
+<img src="https://img.shields.io/badge/HTML-E34F26?style=flat-round&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/Sass-CC6699?style=flat-round&logo=Sass&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-round&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=flat-round&logo=React&logoColor=gray"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-round&logo=TypeScript&logoColor=white"/> 
+<br/>
+
+### Tools
+- <div style="display:flex; align-items: center; margin-right:10px;"><span>Deploy </span><img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat-round&logo=Netlify&logoColor=white"/></div>
+- <div style="display:flex; align-items: center;"><span>버전관리 </span><img src="https://img.shields.io/badge/GitHub-181717?style=flat-round&logo=GitHub&logoColor=white"/></div>
+- <div style="display:flex; align-items: center;"><span>Docs </span><img src="https://img.shields.io/badge/Google Sheets-34A853?style=flat-round&logo=Google Sheets&logoColor=white"/></div>
 
 <br/><br/>
 

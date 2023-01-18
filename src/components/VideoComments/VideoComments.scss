@@ -1,0 +1,52 @@
+.VideoComments {
+  padding: 1rem 0;
+}
+.commentCount {
+  padding: 1.5rem 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.VideoComments li {
+  display: flex;
+  padding: 1.5rem 0;
+}
+.VideoComments .profileImg img {
+  width: 40px;
+  margin-right: 2rem;
+  border-radius: 50%;
+}
+
+.commentMain .user {
+  display: flex;
+}
+.commentMain .user p {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.commentMain .user span {
+  padding: 0 0.8rem;
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+.commentMain .comment {
+  padding: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.commentMain .btns {
+  display: flex;
+  padding-top: 0.5rem;
+}
+.commentMain .btns .btn {
+  margin-right: 1.25rem;
+}
+.commentMain .btns span {
+  color: #aaa;
+  font-weight: bold;
+}
+.commentMain .btns .btn:nth-child(1) svg {
+  margin-right: 0.5rem;
+  vertical-align: bottom;
+}

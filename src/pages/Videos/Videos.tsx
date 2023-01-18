@@ -1,5 +1,11 @@
-import React from 'react';
+import VideoCard from 'src/components/VideoCard/VideoCard';
+import './Videos.scss';
+const Videos = () => {
+  return (
+    <ul className="mainGallery">
+      <VideoCard />
+    </ul>
+  );
+};
 
-export default function Videos() {
-  return <div>Videos</div>;
-}
+export default Videos;

@@ -1,25 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './ChannelInfo.scss';
 
 const ChannelInfo = ({ videoId, channelInfo }) => {
   return (
-    <div>
-      <div>
-        <div>
-          {/* 채널 프사 */}
-          <img
-            src="https://yt3.ggpht.com/EjqONiq-nKhXEhz_4FGQWeKAHHXHTWVjIxRYou8_PziBFNW7Fq5-NN-dMIHbG3_MFNbjYs76pg=s88-c-k-c0x00ffffff-no-rj"
-            alt="avatar"
-          />
+    <div className="channelInfo">
+      <div className="main">
+        <div className="profileImg">
+          <img src={channelInfo.snippet.thumbnails.default.url} alt="avatar" />
         </div>
-        <div>
-          <a href="/">{channelInfo.snippet.localized.title}</a>
+        <div className="profileTxt">
+          <Link to="#">{channelInfo.snippet.localized.title}</Link>
           <span>{channelInfo.statistics.subscriberCount} subscribers</span>
         </div>
-        <div>
+        <div className="btn">
           <button>SUBSCRIBED</button>
         </div>
       </div>
-      <div>{channelInfo.snippet.localized.description}</div>
+      <div className="description">{channelInfo.snippet.localized.description}</div>
     </div>
   );
 };

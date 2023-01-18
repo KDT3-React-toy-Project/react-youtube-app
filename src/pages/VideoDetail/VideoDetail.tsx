@@ -29,49 +29,51 @@ export default function VideoDetail() {
   // });
 
   const videoData = JSON.parse(localStorage.getItem('VideoDetail')).data.items[0];
-  console.log(videoData);
+  // console.log(videoData);
   const commentCount = videoData.statistics.commentCount;
 
   const channelInfo = JSON.parse(localStorage.getItem('ChannelInfo')).data.items[0];
-  // console.log(channelInfo);
+  console.log(channelInfo);
 
   const commentData = JSON.parse(localStorage.getItem('Comment')).data.items;
-  console.log(commentData);
+  // console.log(commentData);
 
   const relationVideos = JSON.parse(localStorage.getItem('RelationVideo')).data.items;
   // console.log(relationVideos);
 
   return (
-    <div className="vd_videoDetail">
-      <div className="vd_videoDetailLeft">
-        {/* 비디오 */}
-        <div id="vd_videoWrap">
-          <iframe
-            title="video"
-            id="player"
-            width="100%"
-            height="100%"
-            src={`//www.youtube.com/embed/${videoId}`}
-            frameBorder="0"
-            allowFullScreen
-          ></iframe>
+    <section className="videoDetail">
+      <div className="wrap">
+        <div className="videoDetailLeft">
+          {/* 비디오 */}
+          <div id="videoWrap">
+            <iframe
+              title="video"
+              id="player"
+              width="100%"
+              height="100%"
+              src={`//www.youtube.com/embed/${videoId}`}
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+          </div>
+
+          {/* 비디오 정보 */}
+          <VideoInfo videoId={videoId} videoData={videoData} />
+
+          {/* 채널 정보 */}
+          <ChannelInfo videoId={videoId} channelInfo={channelInfo} />
+
+          {/* 댓글 */}
+          <VideoComments videoId={videoId} commentData={commentData} commentCount={commentCount} />
         </div>
 
-        {/* 비디오 정보 */}
-        <VideoInfo videoId={videoId} videoData={videoData} />
-
-        {/* 채널 정보 */}
-        <ChannelInfo videoId={videoId} channelInfo={channelInfo} />
-
-        {/* 댓글 */}
-        <VideoComments videoId={videoId} commentData={commentData} commentCount={commentCount} />
+        {/* 관련 동영상 */}
+        <div className="videoDetailRight">
+          {/* 반복 */}
+          <RelatedVideos videoId={videoId} relationVideos={relationVideos} />
+        </div>
       </div>
-
-      {/* 관련 동영상 */}
-      <div className="videoDetailRight">
-        {/* 반복 */}
-        <RelatedVideos videoId={videoId} relationVideos={relationVideos} />
-      </div>
-    </div>
+    </section>
   );
 }
