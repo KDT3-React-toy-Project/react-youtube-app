@@ -1,0 +1,28 @@
+.videoDetail {
+  width: 100%;
+  padding: 3rem;
+}
+
+.wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.videoDetailLeft {
+  max-width: 1280px;
+  padding: 0.5rem 2.5rem 0 0;
+}
+
+.videoDetailRight {
+  flex-basis: 25%;
+  padding: 0.5rem 2.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#videoWrap {
+  // width: 70vw;
+  // height: calc(70vw * 9 / 16);
+}
