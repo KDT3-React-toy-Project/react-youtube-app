@@ -1,6 +1,6 @@
 .videoCard {
   color: #fff;
-  font-size: 14px;
+  font-size: 1rem;
   letter-spacing: 0.2px;
   margin-bottom: 50px;
 }
@@ -24,13 +24,14 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 2px;
-    right: 3px;
+    bottom: 7px;
+    right: 5px;
     background-color: black;
     border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
     span {
       font-weight: 600;
-      font-size: 14px;
     }
   }
 }
@@ -59,17 +60,17 @@
       -webkit-line-clamp: 2;
       overflow: hidden;
       margin-bottom: 10px;
-      line-height: 1.3rem;
+      line-height: 20px;
     }
     .videoInfo {
-      font-size: 14px;
+      font-size: 0.8rem;
       letter-spacing: 0.2px;
     }
     .channelName,
     .metaTag {
       color: #aaa;
       font-weight: 400;
-      line-height: 130%;
+      line-height: 18px;
     }
   }
   .dotContainer {
