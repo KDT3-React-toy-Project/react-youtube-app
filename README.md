@@ -2,6 +2,43 @@
 
 ### 프로젝트 문서는 [여기](https://docs.google.com/spreadsheets/d/1EhoF12aqxV7dyYcOJNbmAZO6rkJGMgtNTbrpR0zFBcM/edit#gid=0)에서 확인하실 수 있습니다.
 
+<br/><br/>
+
+## :raising_hand: Member
+
+<table border>
+  <tbody>
+    <tr>
+      <td align="center" width="200px">
+        <img width="100%" src="https://avatars.githubusercontent.com/u/103119275?v=4"  alt=""/>
+        <a href="https://github.com/Hyeeeein">
+          <img src="https://img.shields.io/badge/김혜인-0d1117?style=flat-round&logo=GitHub&logoColor=white"/>
+        </a>
+      </td>
+      <td align="center" width="200px">
+        <img width="100%" src="https://avatars.githubusercontent.com/u/103406196?v=4"  alt=""/>
+        <a href="https://github.com/hyorimcho">
+          <img src="https://img.shields.io/badge/조효림-0d1117?style=flat-round&logo=GitHub&logoColor=white"/>
+        </a>
+      </td>
+      <td align="center" width="200px">
+        <img width="100%" src="https://avatars.githubusercontent.com/u/76930602?v=4"  alt=""/>
+        <a href="https://github.com/0nesan">
+          <img src="https://img.shields.io/badge/한수산-0d1117?style=flat-round&logo=GitHub&logoColor=white"/>
+        </a>
+      </td>
+      <td align="center" width="200px">
+        <img width="100%" src="https://avatars.githubusercontent.com/u/64674174?v=4"  alt=""/>
+        <a href="https://github.com/hyerimhan">
+          <img src="https://img.shields.io/badge/한혜림-0d1117?style=flat-round&logo=GitHub&logoColor=white"/>
+        </a>
+      </td>
+     </tr>
+  </tbody>
+</table>
+
+<br/><br/>
+
 ## :page_with_curl: 설치된 라이브러리
 
 - ["@tanstack/react-query": "^4.22.0"](https://tanstack.com/query/latest/docs/react/overview)
