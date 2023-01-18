@@ -4,7 +4,6 @@ import { FiMoreVertical } from 'react-icons/fi';
 import axios from 'axios';
 import { viewCountConverter } from "src/util/viewCountConverter";
 import { uploadedDate } from "src/util/uploadedDate";
-import { url } from "inspector";
 
 export default function VideoCard() {
   const [datas, setDatas] = useState([]);
