@@ -47,6 +47,25 @@
 
 <br/><br/>
 
+## :wrench: 기술 스택
+<img src="https://img.shields.io/badge/HTML-E34F26?style=flat-round&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/Sass-CC6699?style=flat-round&logo=Sass&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-round&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=flat-round&logo=React&logoColor=gray"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-round&logo=TypeScript&logoColor=white"/> 
+<br/>
+
+### Tools
+  - Deploy
+  <br/>
+  <img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat-round&logo=Netlify&logoColor=white"/> 
+
+  - 버전관리
+  <br/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-round&logo=GitHub&logoColor=white"/> 
+
+  - Docs
+  <br/>
+  <img src="https://img.shields.io/badge/Google Sheets-34A853?style=flat-round&logo=Google Sheets&logoColor=white"/>
+
+<br/><br/>
+
 ## :page_with_curl: 설치된 라이브러리
 
 - ["@tanstack/react-query": "^4.22.0"](https://tanstack.com/query/latest/docs/react/overview)

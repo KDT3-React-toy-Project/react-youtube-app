@@ -36,7 +36,7 @@ export default function VideoCard() {
               <div className="videoInfo">
                 <div className="channelName">{data.snippet.channelTitle}</div>
                 <div className="metaTag">
-                  <span>{data.statistics.likeCount} views</span>
+                  <span>조회수 {Number(data.statistics.likeCount).toLocaleString()}회</span>
                   <span className="dot_separator"> • </span>
                   <span>{data.snippet.publishedAt}</span>
                 </div>
