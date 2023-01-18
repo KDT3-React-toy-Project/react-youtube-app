@@ -1,16 +1,20 @@
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './components/Header/Header';
-import Nav from './components/Nav/Nav'
+import Sidebar from './components/Nav/Sidebar';
 
 function App() {
-  const [display, setDisplay] = useState<boolean>(false);
+  const [shownav, setShownav] = useState<boolean>(false);
 
   return (
     <>
-      <Header setDisplay={setDisplay}/>
-      <Nav display={display}/>
-      <Outlet />
+      <Header setShownav={setShownav} shownav={shownav}/>
+      <section style={{
+        display:"flex",
+      }}>
+        <Sidebar setShownav={setShownav} shownav={shownav}/>
+        <Outlet />
+      </section>
     </>
   );
 }

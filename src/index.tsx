@@ -7,6 +7,7 @@ import App from './App';
 import NotFound from './pages/NotFound/NotFound';
 import Videos from './pages/Videos/Videos';
 import VideoDetail from './pages/VideoDetail/VideoDetail';
+import VideoSearch from './pages/VideoSearch/VideoSearch';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: 'videos', element: <Videos /> },
       { path: 'videos/:keyword', element: <Videos /> },
       { path: 'videos/watch/:videoId', element: <VideoDetail /> },
+      { path: 'videos/search/:keyword', element: <VideoSearch /> },
     ],
   },
 ]);

@@ -5,7 +5,8 @@ button {
     box-sizing:border-box;
 }
 * { 
-    margin:0
+    margin:0;
+    box-sizing:border-box;
 }
 
 .header { 
@@ -15,7 +16,12 @@ button {
     width:100%;
     height:56px;
     padding:0 16px;
-    box-sizing:border-box;
+    box-sizing: border-box;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:#0f0f0f;
 
     .header__start {
         display:flex;
@@ -33,6 +39,10 @@ button {
             padding:8px;
             border-radius:50%;
 
+            &:hover {
+                background:#333;
+            }
+
             svg {
                 position:relative;
                 width:100%;
@@ -43,7 +53,7 @@ button {
         .header__home-logo {
             text-indent:-9999px;
             height:100%;
-            width:100px;
+            width:130px;
             display:flex;
             justify-content:center;
             align-items:center;
@@ -59,7 +69,13 @@ button {
 
     .search_form {
         width:100%;
-        max-width:650px;
+        max-width:640px;
+        margin-left:70px;
+        align-items:center;
+
+        .input-close-btn {
+            display:none;
+        }
     
         form { 
             display:flex;
@@ -67,15 +83,16 @@ button {
             align-items:center;
             height:40px;
             width:100%;
-            margin-left:40px;
             
             .search-input-wrap {
+                width:calc(100% - 144px);
+                display:flex;
+                align-items:center;
+                height:40px;
                 border:1px solid #333;
                 border-right: none;
                 border-radius:18px 0 0 18px;
-                padding:8px 8px 8px 20px;
-                width:calc(100% - 104px);
-                margin-left:30px;
+                padding:8px 8px 8px 15px;
 
                 input {
                     background-color:transparent;
@@ -85,17 +102,36 @@ button {
                     font-size:1rem;
                     width:100%;
                 }
+
+                .val-del-btn {
+                    display:flex;
+                    justify-items:center;
+                    align-items:center;
+                    text-indent:-9999px;
+                    width:40px;
+                    height:40px;
+                    position: relative;
+                    border-radius:50%;
+
+                    svg {
+                        width:24px;
+                    }
+                }
+
+                .val-del-btn:hover {
+                    background:#333;
+                }
             }
 
             .search-btn {
                 text-indent:-9999px;
-                width:70px;
+                width:60px;
                 height:100%;
                 padding:0 6px;
                 display:flex;
                 justify-content:center;
                 align-items:center;
-                background-color:hsl(0,0%,18.82%);
+                background-color:rgb(36, 36, 36);
                 border-radius:0 18px 18px 0;
 
                 svg {
@@ -110,16 +146,21 @@ button {
                 width:40px;
                 height:40px;
                 position:relative;
-                margin-left:4px;
+                margin-left:10px;
                 border-radius:50%;
                 background-color:rgb(30, 30, 30);
 
+                &:hover {
+                    background:#333;
+                }
+
                 svg {
-                    position:absolute;
-                    top:7.5px;
-                    left:7.5px;
-                    width:25px;
-                    height:25px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 25px;
+                    height: 25px;
+                    transform: translate(-50%, -50%);
                 }
             }
         }  
@@ -130,6 +171,7 @@ button {
         justify-content:center;
         align-items:center;
         gap:10px;
+        margin-left:65px;
 
         button {
             text-indent:-9999px;
@@ -139,8 +181,20 @@ button {
             width:40px;
             height:40px;
             padding:0;
+            border-radius:50%;
         }
 
+        .show-search-btn {
+            display:none;
+        }
+
+        .show-search-btn:hover,
+        .create:hover,
+        .alarm:hover{
+            background:#333;
+        }
+
+        .show-search-btn svg,
         .create svg,
         .alarm svg {
             width:24px;
@@ -156,4 +210,55 @@ button {
     }
 }
 
+.bg-pg {
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,.5);
+    z-index:9998;
+    display:none;
+}
 
+@media (max-width:768px) {
+    .header .header__top-menu {
+        margin-left:0;
+    }
+
+    .search_form {
+        position:absolute;
+        left:0;
+        top:8px;
+        margin-left:0 !important;
+        z-index:9999;
+        background:#000;
+        display:none;
+        padding:0 8px;
+    }
+
+    .show-search-btn { 
+        display: flex !important; 
+    }
+
+    .input-close-btn {
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        display:block !important;
+        
+        &:hover {
+            background:#333;
+        }
+
+        svg {
+            width:24px;
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .bg-pg  {
+        display:block;
+    }
+}
