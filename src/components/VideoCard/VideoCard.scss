@@ -61,14 +61,6 @@
     padding-right: 30px;
     .videoTitle {
       height: 60px;
-      h3 {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-        margin-bottom: 10px;
-        line-height: 20px;
-      }
     }
 
     .videoInfo {
@@ -90,4 +82,13 @@
     right: 0;
     top: 0;
   }
+}
+
+h3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 10px;
+  line-height: 20px;
 }
