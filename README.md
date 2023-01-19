@@ -79,6 +79,7 @@
   - 스타일 초기화
 - ["youtube-duration-format": "^0.2.0"](https://www.npmjs.com/package/youtube-duration-format)
   - 동영상 러닝타임 숫자로 변환해 주는 라이브러리
+- ["react-hook-form": "^7.42.1"](https://react-hook-form.com/)
 
 <br/><br/>
 
