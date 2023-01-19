@@ -1,4 +1,4 @@
-import React, { useState, Dispatch, SetStateAction, useRef } from 'react';
+import React, { useEffect, useState, Dispatch, SetStateAction, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -6,61 +6,67 @@ import './header.scss';
 
 interface show {
   shownav: boolean;
-  setShownav: Dispatch<SetStateAction<boolean>>
+  setShownav: Dispatch<SetStateAction<boolean>>;
 }
 
-interface input { 
-  inputVal : string;
+interface input {
+  inputVal: string;
 }
 
 export default function Header({ setShownav, shownav }: show) {
   const navigate = useNavigate();
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, watch } = useForm({
+    defaultValues: {
+      inputVal: ''
+    }
+  });
+  const { ref, ...rest } = register('inputVal');
+
   const [showInput, setShowInput] = useState<boolean>(false);
   const [showDelBtn, setShowDelBtn] = useState<boolean>(false);
-  const inputEl = useRef<HTMLInputElement>()
+  const inputEl = useRef<HTMLInputElement>();
 
   const onSubmit = (data : input) => {
-    navigate(`videos/search/${data.inputVal}`)
+    navigate(`videos/search/${data.inputVal}`);
+    setShowDelBtn(false);
     reset();
-  }
+  };
 
   const toggleGnbFn = () => {
     shownav ? setShownav(false) : setShownav(true);
-  }
+  };
   const toggleInput = () => {
     showInput ? setShowInput(false) : setShowInput(true);
-  }
+  };
 
   const toggleDelBtn = () => {
     if (inputEl.current.value !== '') {
-      setShowDelBtn(true)
+      setShowDelBtn(true);
     } else {
-      setShowDelBtn(false)
+      setShowDelBtn(false);
     }
-  }
+  };
 
   return (
     <>
-      {shownav && (
-        <div className="bg-pg"></div>
-      )}
+      {shownav && <div className="bg-pg"></div>}
       <header className="header">
         <div className="header__start">
-          <button className="header__gnb-btn" onClick={() => { toggleGnbFn() }}>
+          <button
+            className="header__gnb-btn"
+            onClick={() => {
+              toggleGnbFn();
+            }}
+          >
             menu
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
               <g className="style-scope yt-icon">
-                <path
-                  d="M21,6H3V5h18V6z M21,11H3v1h18V11z M21,17H3v1h18V17z"
-                  fill="#fff"
-                >
-                </path>
+                <path d="M21,6H3V5h18V6z M21,11H3v1h18V11z M21,17H3v1h18V17z" fill="#fff"></path>
               </g>
             </svg>
           </button>
           <h1>
-            <Link to='/' className='header__home-logo'>
+            <Link to="/" className="header__home-logo">
               logo
               <svg viewBox="0 0 97 20" preserveAspectRatio="xMidYMid meet" focusable="false">
                 <g viewBox="0 0 97 20" preserveAspectRatio="xMidYMid meet">
@@ -113,49 +119,63 @@ export default function Header({ setShownav, shownav }: show) {
 
         <div
           className="search_form"
-          style={showInput ? {
-            display: `flex`
-          } : null}
+          style={
+            showInput
+              ? {
+                  display: `flex`,
+                }
+              : null
+          }
         >
-          <button className='input-close-btn' onClick={() => { toggleInput() }}>
+          <button
+            className="input-close-btn"
+            onClick={() => {
+              toggleInput();
+            }}
+          >
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
               <g mirror-in-rtl="">
-                <path
-                  d="M21,11v1H5.64l6.72,6.72l-0.71,0.71L3.72,11.5l7.92-7.92l0.71,0.71L5.64,11H21z"
-                  fill='#fff'
-                />
+                <path d="M21,11v1H5.64l6.72,6.72l-0.71,0.71L3.72,11.5l7.92-7.92l0.71,0.71L5.64,11H21z" fill="#fff" />
               </g>
             </svg>
           </button>
-          <form
+          <form 
             onSubmit={handleSubmit(onSubmit)}
+            {...rest}
           >
-            <div className='search-input-wrap'>
+            <div className="search-input-wrap">
               <input
-                type="text" 
-                placeholder="검색" 
-                ref={inputEl} 
-                onChange={() => { toggleDelBtn() }} 
-                {...register("inputVal")}
+                type="text"
+                placeholder="검색"
+                {...rest}
+                ref={(e) => {
+                  ref(e);
+                  inputEl.current = e;
+                }}
+                onChange={() => {
+                  toggleDelBtn()
+                }}
               />
-              {
-                showDelBtn && (
-                  <button type='button' className="val-del-btn" onClick={() => {
-                    inputEl.current.value = ''
-                    toggleDelBtn()
-                  }}>
-                    검색 내용 지우기
-                    <svg viewBox="0 0 50 50">
-                      <path
-                        d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"
-                        fill='#fff'
-                      />
-                    </svg>
-                  </button>
-                )
-              }
+              {showDelBtn && (
+                <button
+                  type="button"
+                  className="val-del-btn"
+                  onClick={() => {
+                    inputEl.current.value = '';
+                    toggleDelBtn();
+                  }}
+                >
+                  검색 내용 지우기
+                  <svg viewBox="0 0 50 50">
+                    <path
+                      d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"
+                      fill="#fff"
+                    />
+                  </svg>
+                </button>
+              )}
             </div>
-            <button type="submit" className='search-btn'>
+            <button type="submit" className="search-btn">
               검색
               <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
                 <g>
@@ -166,7 +186,7 @@ export default function Header({ setShownav, shownav }: show) {
                 </g>
               </svg>
             </button>
-            <button type="button" className='voice-btn'>
+            <button type="button" className="voice-btn">
               음성인식
               <svg>
                 <path fill="none" d="M0 0h24v24H0z"></path>
@@ -180,7 +200,12 @@ export default function Header({ setShownav, shownav }: show) {
         </div>
 
         <div className="header__top-menu">
-          <button className="show-search-btn" onClick={() => { toggleInput() }}>
+          <button
+            className="show-search-btn"
+            onClick={() => {
+              toggleInput();
+            }}
+          >
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
               <g>
                 <path

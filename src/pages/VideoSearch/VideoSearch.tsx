@@ -1,32 +1,50 @@
 import axios from 'axios';
-import React, { useEffect,Dispatch,SetStateAction,useContext } from 'react'
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ShowcontextProvider, { ShowContext } from 'src/contexts/store';
-import { getSearchData } from './../../api/requests';
+import { getSearchData } from 'src/api/requests';
+import { ShowContext } from 'src/contexts/store';
 
 function VideoSearch() {
-  const [shownav] = useContext(ShowContext)
-  
-  console.log(shownav);
+  const [shownav] = useContext(ShowContext);
+  const [data, setData] = useState<any>([]);
+  const ytDurationFormat = require('youtube-duration-format');
+  const { keyword } = useParams();
 
-  const { keyword } = useParams()
   useEffect(() => {
     const getData = async () => {
       const res = await getSearchData(keyword);
-      console.log(res);
+      setData(res.data.items);
+      console.log(res.data)
     }
     getData();
-
-    // const getDataTest = async () => {
-    //   const res = await fetch(`./videos/search.json`);
-    //   console.log(res)
-    // }
-    // getDataTest();
   }, [keyword]);
 
+  console.log(data);
   return (
-    <div>VideoSearch</div>
+    <div className='search-wrap'>
+      {
+        data.map((item : any, index : number) => {
+          return (
+            <div key = {index}>
+              <div>
+                <img src={item.snippet.thumbnails.high.url} alt={item.snippet.title} />
+                <p>영상 길이</p>
+              </div>
+              <div>
+                <p>{item.snippet.title}</p>
+                <p>날짜, 조회수</p>
+                <p>
+                  <span></span>
+                  <span>{item.snippet.channelTitle}</span>
+                </p>
+                <p>{item.snippet.description}</p>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
   )
 }
 
-export default VideoSearch
+export default VideoSearch;
