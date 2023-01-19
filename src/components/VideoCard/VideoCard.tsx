@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 export default function VideoCard() {
   const ytDurationFormat = require('youtube-duration-format');
   const [datas, setDatas] = useState([]);
-  const ytDurationFormat = require('youtube-duration-format');
 
   useEffect(() => {
     const getData = async () => {
@@ -26,7 +25,7 @@ export default function VideoCard() {
     <>
       {datas.map((data) => (
         <li className="videoCard" key={data.id}>
-          <Link to={`/videos/watch/${data.id}`}>
+          <Link to={`/videos/watch/${data.id}`} state={{ channelId: data.snippet.channelId }}>
             <div className="videoPreview">
               <img src={data.snippet.thumbnails.medium.url} alt={data.snippet.title} />
               <span className="videoDuration">{ytDurationFormat(data.contentDetails.duration)}</span>
