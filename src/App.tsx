@@ -11,13 +11,13 @@ function App() {
 
   return (
     <>
-      <QueryClientProvider client={queryClient}>
-        <Header setDisplay={setDisplay} />
-        <div className="contents">
-          <Nav display={display} />
+      <Header setDisplay={setDisplay} />
+      <div className="contents">
+        <Nav display={display} />
+        <QueryClientProvider client={queryClient}>
           <Outlet />
-        </div>
-      </QueryClientProvider>
+        </QueryClientProvider>
+      </div>
     </>
   );
 }
