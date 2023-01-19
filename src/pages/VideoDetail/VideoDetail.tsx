@@ -15,31 +15,42 @@ export default function VideoDetail() {
   const { videoId } = useParams();
 
   /* useQuery 사용 */
-  // const { isLoading, data: videoData, error } = useQuery([videoId], () => getVideoDetail(videoId));
+  // const { isLoading: videoLoading, data: videoData } = useQuery([videoId], () => getVideoDetail(videoId));
   // console.log(videoData);
+  // const commentCount = videoData.statistics.commentCount;
+
+  // const { isLoading: channelLoading, data: channelInfo } = useQuery(['UCPydsWBQpnXGICE-XWGNdow'], () =>
+  //   getChannelInfo('UCPydsWBQpnXGICE-XWGNdow'),
+  // );
+  // console.log(channelInfo);
 
   // 예시
   // channelId : "UCPydsWBQpnXGICE-XWGNdow"
   // videoId : "b1QpN8cJQCo"
   // useEffect(() => {
-  //   getChannelInfo('UCPydsWBQpnXGICE-XWGNdow').then((data) => {
+  //   getVideoDetail(videoId).then((data) => {
   //     console.log(data);
-  //     localStorage.setItem('ChannelInfo', JSON.stringify(data));
+  //     // localStorage.setItem('VideoDetail', JSON.stringify(data));
   //   });
-  // });
+  //   // if (!JSON.parse(localStorage.getItem('ChannelInfo'))) {
+  //   // }
+  //   // if (!JSON.parse(localStorage.getItem('Comment'))) {
+  //   // }
+  //   // if (!JSON.parse(localStorage.getItem('RelationVideo'))) {
+  //   // }
+  // }, [videoId]);
 
-  const videoData = JSON.parse(localStorage.getItem('VideoDetail')).data.items[0];
+  // const videoData = JSON.parse(localStorage.getItem('VideoDetail'));
   // console.log(videoData);
-  const commentCount = videoData.statistics.commentCount;
 
-  const channelInfo = JSON.parse(localStorage.getItem('ChannelInfo')).data.items[0];
-  console.log(channelInfo);
+  // const channelInfo = JSON.parse(localStorage.getItem('ChannelInfo')).data.items[0];
+  // // console.log(channelInfo);
 
-  const commentData = JSON.parse(localStorage.getItem('Comment')).data.items;
-  // console.log(commentData);
+  // const commentData = JSON.parse(localStorage.getItem('Comment')).data.items;
+  // // console.log(commentData);
 
-  const relationVideos = JSON.parse(localStorage.getItem('RelationVideo')).data.items;
-  // console.log(relationVideos);
+  // const relationVideos = JSON.parse(localStorage.getItem('RelationVideo')).data.items;
+  // // console.log(relationVideos);
 
   return (
     <section className="videoDetail">
@@ -59,19 +70,19 @@ export default function VideoDetail() {
           </div>
 
           {/* 비디오 정보 */}
-          <VideoInfo videoId={videoId} videoData={videoData} />
+          {/* <VideoInfo videoId={videoId} videoData={videoData} /> */}
 
           {/* 채널 정보 */}
-          <ChannelInfo videoId={videoId} channelInfo={channelInfo} />
+          {/* <ChannelInfo videoId={videoId} channelInfo={channelInfo} /> */}
 
           {/* 댓글 */}
-          <VideoComments videoId={videoId} commentData={commentData} commentCount={commentCount} />
+          {/* <VideoComments videoId={videoId} commentData={commentData} commentCount={commentCount} /> */}
         </div>
 
         {/* 관련 동영상 */}
         <div className="videoDetailRight">
           {/* 반복 */}
-          <RelatedVideos videoId={videoId} relationVideos={relationVideos} />
+          {/* <RelatedVideos videoId={videoId} relationVideos={relationVideos} /> */}
         </div>
       </div>
     </section>

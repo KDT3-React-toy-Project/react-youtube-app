@@ -2,7 +2,7 @@ import React, { useState, Dispatch, SetStateAction, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import './header.scss';
+import './Header.scss';
 
 interface show {
   shownav: boolean;
@@ -60,7 +60,7 @@ export default function Header({ setShownav, shownav }: show) {
             </svg>
           </button>
           <h1>
-            <Link to='/' className='header__home-logo'>
+            <Link to="/" className="header__home-logo">
               logo
               <svg viewBox="0 0 97 20" preserveAspectRatio="xMidYMid meet" focusable="false">
                 <g viewBox="0 0 97 20" preserveAspectRatio="xMidYMid meet">

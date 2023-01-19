@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { viewCountConverter } from 'src/util/viewCountConverter';
 import './ChannelInfo.scss';
 
 const ChannelInfo = ({ videoId, channelInfo }) => {
@@ -11,7 +12,7 @@ const ChannelInfo = ({ videoId, channelInfo }) => {
         </div>
         <div className="profileTxt">
           <Link to="#">{channelInfo.snippet.localized.title}</Link>
-          <span>{channelInfo.statistics.subscriberCount} subscribers</span>
+          <span>{viewCountConverter(channelInfo.statistics.subscriberCount)} subscribers</span>
         </div>
         <div className="btn">
           <button>SUBSCRIBED</button>
