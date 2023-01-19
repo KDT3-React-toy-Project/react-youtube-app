@@ -1,12 +1,12 @@
 import React from 'react';
 import { BiLike, BiDislike } from 'react-icons/bi';
+import { uploadedDate } from 'src/util/uploadedDate';
 import './VideoComments.scss';
 
 const VideoComments = ({ videoId, commentData /* commentCount */ }) => {
   return (
     <ul className="VideoComments">
-      {/* <p className="commentCount">{commentCount} Comments</p> */}
-
+      \{/* <p className="commentCount">{commentCount} Comments</p> */}\
       {commentData.map((comment) => (
         <li key={comment.id}>
           <div className="profileImg">
@@ -15,7 +15,7 @@ const VideoComments = ({ videoId, commentData /* commentCount */ }) => {
           <div className="commentMain">
             <div className="user">
               <p>{comment.snippet.topLevelComment.snippet.authorDisplayName}</p>
-              <span>{comment.snippet.topLevelComment.snippet.publishedAt} a day ago</span>
+              <span>{uploadedDate(comment.snippet.topLevelComment.snippet.publishedAt)}</span>
             </div>
             <div className="comment">{comment.snippet.topLevelComment.snippet.textDisplay}</div>
             <div className="btns">

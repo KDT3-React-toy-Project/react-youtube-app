@@ -7,8 +7,8 @@ import { uploadedDate } from 'src/util/uploadedDate';
 import { Link } from 'react-router-dom';
 
 export default function VideoCard() {
-  const ytDurationFormat = require('youtube-duration-format');
   const [datas, setDatas] = useState([]);
+  const ytDurationFormat = require('youtube-duration-format');
 
   useEffect(() => {
     const getData = async () => {

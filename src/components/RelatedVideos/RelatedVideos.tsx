@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { viewCountConverter } from 'src/util/viewCountConverter';
 import './RelatedVideos.scss';
 
 const RelatedVideos = ({ videoId, relationVideos }) => {
@@ -31,7 +32,8 @@ const RelatedVideos = ({ videoId, relationVideos }) => {
                   <span>{video.snippet.channelTitle}</span>
                 </Link>
                 <div className="etc">
-                  <span>조회수 없음</span>&nbsp;<span> • </span>&nbsp;<span>{video.snippet.publishedAt}</span>
+                  <span>조회수 없음</span>&nbsp;<span> • </span>&nbsp;
+                  <span>{viewCountConverter(video.snippet.publishedAt)}</span>
                 </div>
               </div>
             </div>
