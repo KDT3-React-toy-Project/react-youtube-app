@@ -1,23 +1,23 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './components/Header/Header';
-import Nav from './components/Nav/Nav';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Sidebar from './components/Nav/Sidebar';
+import { ShowContext } from './contexts/store';
 
 function App() {
-  const [display, setDisplay] = useState<boolean>(false);
-
-  const queryClient = new QueryClient();
+  const [shownav, setShownav] = useContext(ShowContext);
 
   return (
     <>
-      <Header setDisplay={setDisplay} />
-      <div className="contents">
-        <Nav display={display} />
-        <QueryClientProvider client={queryClient}>
-          <Outlet />
-        </QueryClientProvider>
-      </div>
+      <Header setShownav={setShownav} shownav={shownav} />
+      <section
+        style={{
+          display: 'flex',
+        }}
+      >
+        <Sidebar setShownav={setShownav} shownav={shownav} />
+        <Outlet />
+      </section>
     </>
   );
 }

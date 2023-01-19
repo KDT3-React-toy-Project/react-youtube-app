@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'reset-css';
 import './index.scss';
@@ -7,6 +6,9 @@ import App from './App';
 import NotFound from './pages/NotFound/NotFound';
 import Videos from './pages/Videos/Videos';
 import VideoDetail from './pages/VideoDetail/VideoDetail';
+import VideoSearch from './pages/VideoSearch/VideoSearch';
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import ShowcontextProvider from './contexts/store';
 
 const router = createBrowserRouter([
   {
@@ -18,9 +20,14 @@ const router = createBrowserRouter([
       { path: 'videos', element: <Videos /> },
       { path: 'videos/:keyword', element: <Videos /> },
       { path: 'videos/watch/:videoId', element: <VideoDetail /> },
+      { path: 'videos/search/:keyword', element: <VideoSearch/> },
     ],
   },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-root.render(<RouterProvider router={router} />);
+root.render(
+  <ShowcontextProvider >
+    <RouterProvider router={router} />
+  </ShowcontextProvider>
+);
