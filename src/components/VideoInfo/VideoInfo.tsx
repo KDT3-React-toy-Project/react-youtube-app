@@ -16,7 +16,8 @@ const VideoInfo = ({ videoId, videoData }) => {
         </ul>
         <h2 className="title">{videoData.snippet.localized.title}</h2>
         <p className="etc">
-          <span>{videoData.statistics.viewCount} views</span> • <span>{videoData.snippet.publishedAt}</span>
+          <span>{Number(videoData.statistics.viewCount).toString()} views</span> •{' '}
+          <span>{videoData.snippet.publishedAt}</span>
         </p>
       </div>
       <div className="infoBtns">
