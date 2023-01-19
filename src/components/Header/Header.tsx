@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Dispatch, SetStateAction, useRef } from 'react';
+import { useState, Dispatch, SetStateAction, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -15,10 +15,10 @@ interface input {
 
 export default function Header({ setShownav, shownav }: show) {
   const navigate = useNavigate();
-  const { register, handleSubmit, reset, watch } = useForm({
+  const { register, handleSubmit, reset } = useForm({
     defaultValues: {
-      inputVal: ''
-    }
+      inputVal: '',
+    },
   });
   const { ref, ...rest } = register('inputVal');
 
@@ -26,7 +26,7 @@ export default function Header({ setShownav, shownav }: show) {
   const [showDelBtn, setShowDelBtn] = useState<boolean>(false);
   const inputEl = useRef<HTMLInputElement>();
 
-  const onSubmit = (data : input) => {
+  const onSubmit = (data: input) => {
     navigate(`videos/search/${data.inputVal}`);
     setShowDelBtn(false);
     reset();
@@ -139,10 +139,7 @@ export default function Header({ setShownav, shownav }: show) {
               </g>
             </svg>
           </button>
-          <form 
-            onSubmit={handleSubmit(onSubmit)}
-            {...rest}
-          >
+          <form onSubmit={handleSubmit(onSubmit)} {...rest}>
             <div className="search-input-wrap">
               <input
                 type="text"
@@ -153,7 +150,7 @@ export default function Header({ setShownav, shownav }: show) {
                   inputEl.current = e;
                 }}
                 onChange={() => {
-                  toggleDelBtn()
+                  toggleDelBtn();
                 }}
               />
               {showDelBtn && (
