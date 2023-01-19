@@ -75,6 +75,10 @@
     <img src="https://i.ibb.co/JvJ3Ssv/2023-01-16-114404.png" alt="2023-01-16-114404" border="0">
 - "dotenv": "^16.0.3"
   - apikey 숨김. `REACT_APP_API_KEY`로 apikey 사용
+- "reset-css": "^5.0.1"
+  - 스타일 초기화
+- ["youtube-duration-format": "^0.2.0"](https://www.npmjs.com/package/youtube-duration-format)
+  - 동영상 러닝타임 숫자로 변환해 주는 라이브러리
 
 <br/><br/>
 
@@ -82,7 +86,7 @@
 
 ### 1. Header
 
-- [ ] 로고
+- [X] 로고
   - 클릭 시, 홈으로 이동
 - [ ] 검색창
   - 해당 제목으로 영상 검색
@@ -92,31 +96,47 @@
 
 ### 2. HOME
 
-- [ ] 영상 목록
-
+- [X] 영상 목록
   - public -> videos -> popular.json 목업데이터 우선 사용
-    <br/><br/>
 
   ### 2-1. VideoCard
 
   - [ ] 영상 클릭 시, 해당 영상 VideoDetail 페이지로 넘어감.
-  - [ ] 썸네일
-  - [ ] 영상 제목
-  - [ ] 채널명
-  - [ ] 조회수 &middot; 업로드날짜
-        <br/><br/>
+  - [X] 썸네일
+  - [X] 영상 제목
+  - [X] 채널명
+  - [X] 조회수 &middot; 업로드날짜
 
 ### 3. VideoDetail
 
-- [ ] 영상
-- [ ] 영상 제목
-- [ ] 채널명
-- [ ] 영상 상세 설명
-- [ ] 관련 영상 목록
-- [ ] 댓글
+- [X] 영상
+- [X] 영상 제목
+- [X] 채널명
+- [X] 영상 상세 설명
+- [X] 관련 영상 목록
+- [X] 댓글
 
 ### 4. 기타
 
 - [ ] 화면 렌더링 중일땐 `Loading...` 출력
-- [ ] 페이지에 에러 발생 시, NotFound 페이지로 넘어감.
+- [X] 페이지에 에러 발생 시, NotFound 페이지로 넘어감.
 - [ ] 반응형
+
+<br/><br/>
+
+## :scream: 이슈
+
+<table border>
+  <thead>
+    <tr>
+      <th width="60%">발생 이슈</th>
+      <th>해결 방법</th>
+    </tr>
+  </thead>  
+  <tbody>
+    <tr>
+      <td><img src="https://i.ibb.co/2yBFch9/230117-adblock.png" alt="230117-adblock" border="0"><br/>디테일 페이지에서 영상 가져올 떄 발생하는 에러</td>
+      <td>크롬에 adblock이 설치되어 있어서 뜨는 에러. 무시해도 잘 작동함.</td>
+    </tr>
+  </tbody>
+</table>

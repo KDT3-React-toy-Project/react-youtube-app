@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './VideoCard.scss';
 import { FiMoreVertical } from 'react-icons/fi';
 import axios from 'axios';
+import { viewCountConverter } from 'src/util/viewCountConverter';
+import { uploadedDate } from 'src/util/uploadedDate';
 
 export default function VideoCard() {
+  const ytDurationFormat = require('youtube-duration-format');
   const [datas, setDatas] = useState([]);
 
   useEffect(() => {
@@ -20,12 +23,10 @@ export default function VideoCard() {
   return (
     <>
       {datas.map((data) => (
-        <div className="videoCard" key={data.id}>
+        <li className="videoCard" key={data.id}>
           <div className="videoPreview">
-            <img src={data.snippet.thumbnails.high.url} alt={data.snippet.title} />
-            <div className="videoDuration">
-              <span>{data.contentDetails.duration}</span>
-            </div>
+            <img src={data.snippet.thumbnails.medium.url} alt={data.snippet.title} />
+            <span className="videoDuration">{ytDurationFormat(data.contentDetails.duration)}</span>
           </div>
           <div className="videoInfoContainer">
             <div className="avatarContainer">
@@ -36,9 +37,9 @@ export default function VideoCard() {
               <div className="videoInfo">
                 <div className="channelName">{data.snippet.channelTitle}</div>
                 <div className="metaTag">
-                  <span>조회수 {Number(data.statistics.likeCount).toLocaleString()}회</span>
+                  <span>조회수 {viewCountConverter(data.statistics.likeCount)}회</span>
                   <span className="dot_separator"> • </span>
-                  <span>{data.snippet.publishedAt}</span>
+                  <span>{uploadedDate(data.snippet.publishedAt)}</span>
                 </div>
               </div>
             </div>
@@ -46,7 +47,7 @@ export default function VideoCard() {
               <FiMoreVertical />
             </div>
           </div>
-        </div>
+        </li>
       ))}
     </>
   );

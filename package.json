@@ -22,7 +22,8 @@
     "reset-css": "^5.0.1",
     "timeago.js": "^4.0.2",
     "typescript": "^4.9.4",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "youtube-duration-format": "^0.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -49,7 +50,6 @@
     ]
   },
   "devDependencies": {
-    "@tailwindcss/line-clamp": "^0.4.2",
     "dotenv": "^16.0.3",
     "eslint-config-react-app": "^7.0.1"
   }
