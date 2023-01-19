@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import VideoCard from 'src/components/VideoCard/VideoCard';
-import ShowcontextProvider, { ShowContext } from 'src/contexts/store';
+import { ShowContext } from 'src/contexts/store';
 import './Videos.scss';
 const Videos = () => {
   const [shownav] = useContext(ShowContext);
