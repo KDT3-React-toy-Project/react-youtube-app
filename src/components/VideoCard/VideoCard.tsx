@@ -35,7 +35,9 @@ export default function VideoCard() {
                 <img src={data.snippet.thumbnails.medium.url} alt={data.snippet.title} />
               </div>
               <div className="videoTextContainer">
-                <h4>{data.snippet.title}</h4>
+                <div className="videoTitle">
+                  <h3>{data.snippet.title}</h3>
+                </div>
                 <div className="videoInfo">
                   <div className="channelName">{data.snippet.channelTitle}</div>
                   <div className="metaTag">
