@@ -4,7 +4,6 @@ import { useLocation, useParams } from 'react-router-dom';
 import { getComment, getVideoDetail } from 'src/api/requests';
 import { getRelationVideo, getChannelInfo } from './../../api/requests';
 import './VideoDetail.scss';
-
 import VideoInfo from 'src/components/VideoInfo/VideoInfo';
 import ChannelInfo from 'src/components/ChannelInfo/ChannelInfo';
 import VideoComments from './../../components/VideoComments/VideoComments';
