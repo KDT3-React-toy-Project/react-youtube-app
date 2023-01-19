@@ -1,14 +1,5 @@
-import { useQuery } from '@tanstack/react-query';
-import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getComment, getVideoDetail } from 'src/api/requests';
-import { getRelationVideo, getChannelInfo } from './../../api/requests';
 import './VideoDetail.scss';
-
-import VideoInfo from 'src/components/VideoInfo/VideoInfo';
-import ChannelInfo from 'src/components/ChannelInfo/ChannelInfo';
-import VideoComments from './../../components/VideoComments/VideoComments';
-import RelatedVideos from 'src/components/RelatedVideos/RelatedVideos';
 
 export default function VideoDetail() {
   // 주소의 비디오 아이디 가져오기
