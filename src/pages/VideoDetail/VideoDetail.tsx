@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { getComment, getVideoDetail } from 'src/api/requests';
 import { getRelationVideo, getChannelInfo } from './../../api/requests';
