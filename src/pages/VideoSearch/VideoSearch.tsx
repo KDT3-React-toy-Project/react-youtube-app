@@ -11,17 +11,17 @@ function VideoSearch() {
 
   const { keyword } = useParams()
   useEffect(() => {
-    // const getData = async () => {
-    //   const res = await getSearchData(keyword);
-    //   console.log(res);
-    // }
-    // getData();
-
-    const getDataTest = async () => {
-      const res = await fetch(`./videos/search.json`);
-      console.log(res)
+    const getData = async () => {
+      const res = await getSearchData(keyword);
+      console.log(res);
     }
-    getDataTest();
+    getData();
+
+    // const getDataTest = async () => {
+    //   const res = await fetch(`./videos/search.json`);
+    //   console.log(res)
+    // }
+    // getDataTest();
   }, [keyword]);
 
   return (
