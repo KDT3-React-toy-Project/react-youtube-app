@@ -1,18 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { viewCountConverter } from 'src/util/viewCountConverter';
 import './RelatedVideos.scss';
 
 const RelatedVideos = ({ videoId, relationVideos }) => {
-  console.log(relationVideos);
-  // '영상시간'에 쓰시면 돼요! ytDurationFormat(데이터)요렇게 호출하시면 됩니다
-  // const ytDurationFormat = require('youtube-duration-format');
+  // console.log(relationVideos);
+  const navigate = useNavigate();
+
+  const handleClick = (id: string) => {
+    navigate(`/videos/watch/${id}`);
+  };
 
   return (
     <ul className="relatedVideos">
       {relationVideos.map((video) => (
-        <li key={video.id.videoId}>
-          <Link to={`/videos/watch/${video.id.videoId}`} className="videoWrap">
+        <li key={video.id.videoId} onClick={() => handleClick(video.id.videoId)}>
+          {/* link 연결 추가 */}
+          <div className="videoWrap">
             <div className="thumbnail">
               <img src={video.snippet.thumbnails.medium.url} alt={video.snippet.title} />
               <div className="duration">
@@ -25,7 +29,7 @@ const RelatedVideos = ({ videoId, relationVideos }) => {
               <h3 className="title">{video.snippet.title}</h3>
               <div className="etcs">
                 <Link to={`/channel/${video.snippet.channelId}`}>
-                  <div>{video.snippet.channelTitle}</div>
+                  <span>{video.snippet.channelTitle}</span>
                 </Link>
                 <div className="etc">
                   <span>조회수 없음</span>&nbsp;<span> • </span>&nbsp;
@@ -33,7 +37,7 @@ const RelatedVideos = ({ videoId, relationVideos }) => {
                 </div>
               </div>
             </div>
-          </Link>
+          </div>
         </li>
       ))}
     </ul>

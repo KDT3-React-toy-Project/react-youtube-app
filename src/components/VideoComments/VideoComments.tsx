@@ -3,13 +3,12 @@ import { BiLike, BiDislike } from 'react-icons/bi';
 import { uploadedDate } from 'src/util/uploadedDate';
 import './VideoComments.scss';
 
-const VideoComments = ({ videoId, commentData, commentCount }) => {
+const VideoComments = ({ videoId, commentData /* commentCount */ }) => {
   return (
     <ul className="VideoComments">
-      <p className="commentCount">{Number(commentCount).toLocaleString()} Comments</p>
-
+      \{/* <p className="commentCount">{commentCount} Comments</p> */}\
       {commentData.map((comment) => (
-        <li>
+        <li key={comment.id}>
           <div className="profileImg">
             <img src={comment.snippet.topLevelComment.snippet.authorProfileImageUrl} alt="user profile" />
           </div>
