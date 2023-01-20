@@ -496,7 +496,7 @@ function Sidebar({ setShownav, shownav }: show) {
               <a href="/">
                 <svg viewBox="0 0 24 24" focusable="false">
                   <g>
-                    <path d="M4,10V21h6V15h4v6h6V10L12,3Z" fill="#fff" />
+                    <path d="M4,10V21h6V15h4v6h6V10L12,3Z" stroke="#fff" />
                   </g>
                 </svg>
                 <span>홈</span>
