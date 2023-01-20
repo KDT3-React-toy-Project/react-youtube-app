@@ -4,6 +4,7 @@
 }
 .contents {
   width:100%;
+  padding-right:80px;
 }
 a {
   color:#f1f1f1;
@@ -44,6 +45,7 @@ a {
     }
 
     .search-video-info {
+      width:100%;
       min-width:200px;
       max-width:720px;
 
@@ -91,6 +93,15 @@ a {
         line-height:1.5;
         font-size:0.7rem;
         color:#aaa;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      
+      .search-video-view {
+        color:#aaa;
+        font-size:0.75rem;
+        margin-top:3px;
       }
     }
   }
@@ -104,9 +115,19 @@ a {
   .search-container[nav-check = "show"] {
     margin-left:80px;
   }
+
+  .search-video-description {
+    white-space:normal !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
 }
 
 @media (max-width:768px) {
+  .contents {
+    padding-right:0;
+  }
   .search-thumbnails{
     width:60% !important;
     max-width:360px;
