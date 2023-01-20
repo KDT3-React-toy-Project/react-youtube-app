@@ -5,7 +5,7 @@ import axios from 'axios';
 import { viewCountConverter } from 'src/util/viewCountConverter';
 import { uploadedDate } from 'src/util/uploadedDate';
 import { Link } from 'react-router-dom';
-import { getSearchData } from 'src/api/requests';
+// import { getSearchData } from 'src/api/requests';
 import { ShowContext } from 'src/contexts/store';
 
 export default function VideoCard() {
