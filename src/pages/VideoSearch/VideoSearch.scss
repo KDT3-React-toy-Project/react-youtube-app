@@ -38,9 +38,14 @@ a {
       }
 
       p {
-        position:absolute;
-        top:1px;
-        left:1px;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        background: #000;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 0.75rem;
+        font-weight: 900;
       }
     }
 
