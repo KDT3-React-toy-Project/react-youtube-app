@@ -6,7 +6,7 @@ import { ShowContext } from 'src/contexts/store';
 import './VideoSearch.scss'
 
 function VideoSearch() {
-  const [shownav] = useContext(ShowContext);
+  // const [shownav] = useContext(ShowContext);
   const [data, setData] = useState<any>([]);
   const { keyword } = useParams();
   
