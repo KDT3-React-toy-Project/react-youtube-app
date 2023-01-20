@@ -5,12 +5,12 @@ import './Videos.scss';
 const Videos = () => {
   const [shownav] = useContext(ShowContext);
 
-  console.log('1111', shownav);
-
   return (
-    <ul className={shownav === false ? 'mainGallery' : 'narrowGallery'}>
-      <VideoCard />
-    </ul>
+    <div className="GalleryContainer">
+      <ul className="mainGallery" nav-check={shownav ? 'show' : 'none'}>
+        <VideoCard />
+      </ul>
+    </div>
   );
 };
 

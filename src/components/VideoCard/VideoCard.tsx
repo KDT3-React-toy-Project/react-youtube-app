@@ -5,21 +5,29 @@ import axios from 'axios';
 import { viewCountConverter } from 'src/util/viewCountConverter';
 import { uploadedDate } from 'src/util/uploadedDate';
 import { Link } from 'react-router-dom';
+import { getSearchData } from 'src/api/requests';
 
 export default function VideoCard() {
   const ytDurationFormat = require('youtube-duration-format');
   const [datas, setDatas] = useState([]);
 
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const res = (await axios.get('./videos/popular.json')).data.items;
+  //     console.log('res', res);
+  //     setDatas(res);
+  //   };
+  //   getData();
+  // }, []);
+
   useEffect(() => {
     const getData = async () => {
-      const res = (await axios.get('./videos/popular.json')).data.items;
-      console.log('res', res);
-      setDatas(res);
+      const res = await getSearchData('빠더너스');
+      console.log('res', res.data.items);
+      setDatas(res.data.items);
     };
     getData();
   }, []);
-
-  console.log('datas', datas);
 
   return (
     <>
