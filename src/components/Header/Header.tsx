@@ -2,6 +2,7 @@ import { useState, Dispatch, SetStateAction, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { login } from 'src/api/firebase';
 import './Header.scss';
 
 interface show {
@@ -197,6 +198,9 @@ export default function Header({ setShownav, shownav }: show) {
         </div>
 
         <div className="header__top-menu">
+          <button style={{ color: '#fff', textIndent: '0' }} onClick={login}>
+            로그인
+          </button>
           <button
             className="show-search-btn"
             onClick={() => {
