@@ -2,7 +2,7 @@ import { useState, Dispatch, SetStateAction, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import './Header.scss';
+import './header.scss';
 
 interface show {
   shownav: boolean;
