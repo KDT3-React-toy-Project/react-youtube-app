@@ -218,10 +218,14 @@ button {
       color: $main-text-color;
       text-indent: 0;
       width: auto;
-      font-size: 1rem;
+    }
+
+    .logout {
+      color: $secondary-text-color;
     }
 
     .login {
+      font-size: 1rem;
       color: #3ea6ff;
       border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 50px;
