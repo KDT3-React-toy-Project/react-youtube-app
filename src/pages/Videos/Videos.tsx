@@ -6,8 +6,8 @@ const Videos = () => {
   const [shownav] = useContext(ShowContext);
 
   return (
-    <div className="GalleryContainer">
-      <ul className="mainGallery" nav-check={shownav ? 'show' : 'none'}>
+    <div className="GalleryContainer" nav-check={shownav ? 'show' : 'none'}>
+      <ul className="mainGallery">
         <VideoCard />
       </ul>
     </div>
