@@ -15,7 +15,11 @@ const provider = new GoogleAuthProvider();
 
 // 로그인
 export function login() {
-  signInWithPopup(auth, provider).catch(console.error);
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      console.log(result);
+    })
+    .catch(console.error);
 }
 
 // 로그아웃

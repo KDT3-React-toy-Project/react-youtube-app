@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getChannelInfo, getVideoDetail } from 'src/api/requests';
 import { uploadedDate } from 'src/util/uploadedDate';
 import { viewCountConverter } from 'src/util/viewCountConverter';
@@ -24,7 +24,8 @@ function VideoSearchInfo({ videoId, channelId }) {
         <div className="search-video-info">
           <p className="search-video-title">{videoData.snippet.title}</p>
           <p className="search-video-view">
-            조회수 {viewCountConverter(videoData.statistics.viewCount)}회<span style={{margin:'0 5px'}}>·</span>{uploadedDate(videoData.snippet.publishedAt)}
+            조회수 {viewCountConverter(videoData.statistics.viewCount)}회<span style={{ margin: '0 5px' }}>·</span>
+            {uploadedDate(videoData.snippet.publishedAt)}
           </p>
           <p className="search-channel-title">
             <span>
@@ -33,7 +34,7 @@ function VideoSearchInfo({ videoId, channelId }) {
             <span>{videoData.snippet.channelTitle}</span>
           </p>
           <div>
-              <p className="search-video-description">{videoData.snippet.description}</p>
+            <p className="search-video-description">{videoData.snippet.description}</p>
           </div>
         </div>
       ) : null}
