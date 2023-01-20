@@ -1,5 +1,5 @@
 .contents {
-  padding-right:0;
+  padding-right: 0;
 }
 
 .videoCard {
@@ -8,11 +8,24 @@
   letter-spacing: 0.2px;
   margin-bottom: 50px;
   width: calc((100% / 4) - 10px);
-
-  // min-width: 290px;
   a {
     text-decoration: none;
     color: inherit;
+  }
+  @media (max-width: 1024px) {
+    width: calc((100% / 3) - 10px);
+  }
+  @media (max-width: 768px) {
+    width: calc((100% / 2) - 10px);
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.videoCard [nav-check='show'] {
+  @media (max-width: 500px) {
+    width: 100%;
   }
 }
 
@@ -35,22 +48,16 @@
 }
 
 .videoPreview {
-  height: 252px;
+  // height: 252px;
   overflow: hidden;
   position: relative;
   border-radius: 10px;
   width: 100%;
-  height: 200px;
   img {
     aspect-ratio: 180 / 101;
     object-fit: cover;
     width: 100%;
-    height: 100%;
-    position: absolute;
     align-items: center;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
   }
   .videoDuration {
     padding: 3px 4px;
@@ -82,9 +89,6 @@
     }
   }
   .videoTextContainer {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
     padding-right: 30px;
     height: 90px;
     .videoInfo {

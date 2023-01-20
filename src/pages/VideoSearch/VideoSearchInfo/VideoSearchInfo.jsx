@@ -8,19 +8,17 @@ function VideoSearchInfo({ videoId, channelId }) {
   const [channelData, setChannelData] = useState();
 
   useEffect(() => {
-    if(!videoData){
+    if (!videoData) {
       const getData = async () => {
         const videoDataRes = await getVideoDetail(videoId);
         setVideoData(videoDataRes);
-  
+
         const channelDataRes = await getChannelInfo(channelId);
         setChannelData(channelDataRes.snippet.thumbnails.default.url);
       };
       getData();
     }
   });
-
-  console.log(videoData)
 
   return (
     <>

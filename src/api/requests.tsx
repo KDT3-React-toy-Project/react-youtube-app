@@ -28,7 +28,6 @@ export const getVideoDetail = async (videoId: string) => {
       `/videos?part=snippet&part=contentDetails&part=player&part=statistics&id=${videoId}`,
     );
     const data = response.data.items[0];
-    console.log('res');
     return data;
   } catch (error: any) {
     console.error(error.message);
