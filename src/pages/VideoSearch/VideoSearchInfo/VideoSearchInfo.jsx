@@ -5,23 +5,26 @@ import { viewCountConverter } from 'src/util/viewCountConverter';
 
 function VideoSearchInfo({ videoId, channelId }) {
   const [videoData, setVideoData] = useState();
-  const [cheenelData, setCheenelData] = useState();
+  const [channelData, setChannelData] = useState();
 
   useEffect(() => {
     if (!videoData) {
       const getData = async () => {
         const videoDataRes = await getVideoDetail(videoId);
         setVideoData(videoDataRes);
+
         const channelDataRes = await getChannelInfo(channelId);
-        setCheenelData(channelDataRes.snippet.thumbnails.default.url);
+        setChannelData(channelDataRes.snippet.thumbnails.default.url);
       };
       getData();
     }
   });
 
+  console.log(videoData);
+
   return (
     <>
-      {videoData && cheenelData ? (
+      {videoData && channelData ? (
         <div className="search-video-info">
           <p className="search-video-title">{videoData.snippet.title}</p>
           <p className="search-video-view">
@@ -30,7 +33,7 @@ function VideoSearchInfo({ videoId, channelId }) {
           </p>
           <p className="search-channel-title">
             <span>
-              <img src={cheenelData} alt="" />
+              <img src={channelData} alt="" />
             </span>
             <span>{videoData.snippet.channelTitle}</span>
           </p>

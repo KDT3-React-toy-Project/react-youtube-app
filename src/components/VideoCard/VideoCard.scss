@@ -1,3 +1,7 @@
+.contents {
+  padding-right: 0;
+}
+
 .videoCard {
   color: #fff;
   font-size: 1rem;
@@ -25,23 +29,35 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .videoCard[nav-check='show'] {
+    margin-left: 80px;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .videoCard {
+    // width: 60% !important;
+    min-width: 300px;
+    // max-width: 360px;
+  }
+  .videoCard[nav-check='show'] {
+    margin-left: 0;
+  }
+}
+
 .videoPreview {
   // height: 252px;
   overflow: hidden;
   position: relative;
   border-radius: 10px;
   width: 100%;
-  // height: 200px;
   img {
     aspect-ratio: 180 / 101;
     object-fit: cover;
     width: 100%;
-    // height: 100%;
-    // position: absolute;
     align-items: center;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
   }
   .videoDuration {
     padding: 3px 4px;

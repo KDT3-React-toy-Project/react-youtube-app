@@ -27,4 +27,11 @@
   box-sizing: border-box;
 }
 .mainGallery[nav-check='show'] {
+  margin: 0 auto;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.mainGallery[nav-check='show'] {
+  margin: 56px 0 0 240px;
 }
