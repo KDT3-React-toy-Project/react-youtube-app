@@ -5,11 +5,6 @@ import './RelatedVideos.scss';
 import { getVideoDetail } from 'src/api/requests';
 import { uploadedDate } from './../../util/uploadedDate';
 
-interface IRes {
-  duration: string;
-  viewcount: string;
-}
-
 const RelatedVideos = ({ relationVideos }) => {
   const navigate = useNavigate();
   const ytDurationFormat = require('youtube-duration-format');
@@ -19,16 +14,7 @@ const RelatedVideos = ({ relationVideos }) => {
   };
 
   const VideoCard = ({ video }) => {
-    useEffect(() => {
-      if (!JSON.parse(localStorage.getItem(video.id.videoId))) {
-        getVideoDetail(video.id.videoId).then((data) => {
-          const res: IRes = { duration: data.contentDetails.duration, viewcount: data.statistics.viewCount };
-          localStorage.setItem(video.id.videoId, JSON.stringify(res));
-        });
-      }
-    }, [video.id.videoId]);
-
-    const videoData: IRes = JSON.parse(localStorage.getItem(video.id.videoId));
+    const videoData = JSON.parse(localStorage.getItem(video.id.videoId));
 
     return (
       <li key={video.id.videoId} onClick={() => handleClick(video.id.videoId, video.snippet.channelId)}>
