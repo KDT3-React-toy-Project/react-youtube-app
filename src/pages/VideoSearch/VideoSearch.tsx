@@ -3,13 +3,13 @@ import { useEffect, useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 // import { getSearchData, getVideoDetail } from 'src/api/requests';
 import { ShowContext } from 'src/contexts/store';
-import './VideoSearch.scss'
+import './VideoSearch.scss';
 
 function VideoSearch() {
-  // const [shownav] = useContext(ShowContext);
+  const [shownav] = useContext(ShowContext);
   const [data, setData] = useState<any>([]);
   const { keyword } = useParams();
-  
+
   useEffect(() => {
     // const getData = async () => {
     //   const res = await getSearchData(keyword);
@@ -33,14 +33,16 @@ function VideoSearch() {
             <Link to={`/videos/watch/${item.id.videoId}`} key={index}>
               <div className="search-video-list">
                 <div className="search-thumbnails">
-                    <img src={item.snippet.thumbnails.high.url} alt={item.snippet.title} />
-                    <p></p>
+                  <img src={item.snippet.thumbnails.high.url} alt={item.snippet.title} />
+                  <p></p>
                 </div>
-                <div className='search-video-info'>
-                  <p className='search-video-title'>{item.snippet.title}</p>
+                <div className="search-video-info">
+                  <p className="search-video-title">{item.snippet.title}</p>
                   <p>날짜, 조회수</p>
-                  <p className='search-channel-title'>
-                    <span><img src={''} alt="" /></span>
+                  <p className="search-channel-title">
+                    <span>
+                      <img src={''} alt="" />
+                    </span>
                     <span>{item.snippet.channelTitle}</span>
                   </p>
                   <p className="search-video-description">{item.snippet.description}</p>
