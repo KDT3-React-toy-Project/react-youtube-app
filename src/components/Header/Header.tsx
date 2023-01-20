@@ -2,6 +2,7 @@
 import { useState, Dispatch, SetStateAction, useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { BiUserCircle } from 'react-icons/bi';
+import { MdLogout } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { login, logout, onUserStateChange } from 'src/api/firebase';
@@ -239,7 +240,7 @@ export default function Header({ setShownav, shownav }: show) {
           )}
           {user && (
             <button className="logout" onClick={logout}>
-              로그아웃
+              <MdLogout size="24" title="로그아웃" />
             </button>
           )}
         </div>
