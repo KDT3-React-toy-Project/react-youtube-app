@@ -20,8 +20,6 @@ function VideoSearchInfo({ videoId, channelId }) {
     }
   });
 
-  console.log(videoData);
-
   return (
     <>
       {videoData && channelData ? (

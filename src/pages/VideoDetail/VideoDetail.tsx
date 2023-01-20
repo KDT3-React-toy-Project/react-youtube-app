@@ -19,11 +19,6 @@ export default function VideoDetail() {
   const [commentLoading, setCommentLoading] = useState(true);
   const [relatedLoading, setRelatedLoading] = useState(true);
   const [relatedDetailLoading, setRelatedDetailLoading] = useState(true);
-  console.log('videoLoading', videoLoading);
-  console.log('channelLoading', channelLoading);
-  console.log('commentLoading', commentLoading);
-  console.log('relatedLoading', relatedLoading);
-  console.log('relatedDetailLoading', relatedDetailLoading);
 
   // 일일할당량때문에 localStorage 에 없을 경우 저장
   useEffect(() => {

@@ -15,7 +15,6 @@ function VideoSearch() {
     const getData = async () => {
       const res = await getSearchData(keyword);
       setData(res.data.items);
-      console.log(res.data);
     };
     getData();
   }, [keyword]);
@@ -28,7 +27,7 @@ function VideoSearch() {
             <Link to={`/videos/watch/${item.id.videoId}`} key={index} state={{ channelId: item.snippet.channelId }}>
               <div className="search-video-list">
                 <VideoSearchThum videoId={item.id.videoId} />
-                <VideoSearchInfo videoId={item.id.videoId}  channelId={item.snippet.channelId}/>
+                <VideoSearchInfo videoId={item.id.videoId} channelId={item.snippet.channelId} />
               </div>
             </Link>
           );
