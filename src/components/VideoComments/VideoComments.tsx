@@ -7,7 +7,7 @@ const VideoComments = ({ videoId, commentData, commentCount }) => {
   return (
     <ul className="VideoComments">
       <p className="commentCount">{commentCount} Comments</p>
-      {commentData.map((comment) => (
+      {commentData.map((comment: any) => (
         <li key={comment.id}>
           <div className="profileImg">
             <img src={comment.snippet.topLevelComment.snippet.authorProfileImageUrl} alt="user profile" />
@@ -17,7 +17,7 @@ const VideoComments = ({ videoId, commentData, commentCount }) => {
               <p>{comment.snippet.topLevelComment.snippet.authorDisplayName}</p>
               <span>{uploadedDate(comment.snippet.topLevelComment.snippet.publishedAt)}</span>
             </div>
-            <div className="comment">{comment.snippet.topLevelComment.snippet.textDisplay}</div>
+            <div className="comment">{comment.snippet.topLevelComment.snippet.textOriginal}</div>
             <div className="btns">
               <div className="btn">
                 <BiLike />

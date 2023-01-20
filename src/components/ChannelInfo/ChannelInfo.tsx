@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { viewCountConverter } from 'src/util/viewCountConverter';
 import './ChannelInfo.scss';
+import { viewCountConverter } from './../../util/viewCountConverter';
 
-const ChannelInfo = ({ videoId, channelInfo }) => {
+const ChannelInfo = ({ channelInfo }) => {
   return (
     <div className="channelInfo">
       <div className="main">
