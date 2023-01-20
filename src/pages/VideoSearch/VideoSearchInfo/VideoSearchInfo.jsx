@@ -16,7 +16,7 @@ function VideoSearchInfo({ videoId, channelId }) {
       setCheenelData(channelDataRes.snippet.thumbnails.default.url);
     };
     getData();
-  }, []);
+  });
 
   return (
     <>
