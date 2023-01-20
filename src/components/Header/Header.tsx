@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { login } from 'src/api/firebase';
-import './header.scss';
+import './Header.scss';
 
 interface show {
   shownav: boolean;
