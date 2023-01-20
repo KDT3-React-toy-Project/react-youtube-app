@@ -19,6 +19,11 @@ export default function VideoDetail() {
   const [commentLoading, setCommentLoading] = useState(true);
   const [relatedLoading, setRelatedLoading] = useState(true);
   const [relatedDetailLoading, setRelatedDetailLoading] = useState(true);
+  console.log('videoLoading', videoLoading);
+  console.log('channelLoading', channelLoading);
+  console.log('commentLoading', commentLoading);
+  console.log('relatedLoading', relatedLoading);
+  console.log('relatedDetailLoading', relatedDetailLoading);
 
   // 일일할당량때문에 localStorage 에 없을 경우 저장
   useEffect(() => {
@@ -27,6 +32,8 @@ export default function VideoDetail() {
         localStorage.setItem('VideoDetail', JSON.stringify(data));
         setVideoLoading(false);
       });
+    } else {
+      setVideoLoading(false);
     }
 
     if (!JSON.parse(localStorage.getItem('ChannelInfo'))) {
@@ -34,6 +41,8 @@ export default function VideoDetail() {
         localStorage.setItem('ChannelInfo', JSON.stringify(data));
         setChannelLoading(false);
       });
+    } else {
+      setChannelLoading(false);
     }
 
     if (!JSON.parse(localStorage.getItem('Comment'))) {
@@ -41,12 +50,17 @@ export default function VideoDetail() {
         localStorage.setItem('Comment', JSON.stringify(data));
         setCommentLoading(false);
       });
+    } else {
+      setCommentLoading(false);
     }
+
     if (!JSON.parse(localStorage.getItem('RelationVideo'))) {
       getRelationVideo(videoId).then((data) => {
         localStorage.setItem('RelationVideo', JSON.stringify(data));
         setRelatedLoading(false);
       });
+    } else {
+      setRelatedLoading(false);
     }
   }, [channelId, videoId]);
 
