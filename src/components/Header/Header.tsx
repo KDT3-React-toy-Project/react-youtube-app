@@ -5,7 +5,7 @@ import { BiUserCircle } from 'react-icons/bi';
 import { MdLogout } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { login, logout, onUserStateChange } from 'src/api/firebase';
+import { login, logout, onUserStateChange } from 'src/api/firebase/firebase';
 import User from '../User/User';
 import './header.scss';
 
