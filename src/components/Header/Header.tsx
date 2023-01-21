@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import { useState, Dispatch, SetStateAction, useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { BiUserCircle } from 'react-icons/bi';
