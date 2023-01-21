@@ -4,7 +4,7 @@
 
 <br/><br/>
 
-<center>## :raising_hand: Member
+## :raising_hand: Member
 
 <table border>
   <tbody>
@@ -43,21 +43,18 @@
       </td>
      </tr>
   </tbody>
-</table></center>
+</table>
 
 <br/><br/>
 
-<center> 
-
 ## :wrench: 기술 스택
-
 <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-round&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/Sass-CC6699?style=flat-round&logo=Sass&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-round&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=flat-round&logo=React&logoColor=gray"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-round&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-round&logo=Firebase&logoColor=white"/>
 <br/>
 
-<h2 style="margin:15px;">Tools</h2>
-<span style="display:inline-block; margin-bottom:5px;">Deploy</span><br/><img style="margin-bottom:10px;" src="https://img.shields.io/badge/Netlify-00C7B7?style=flat-round&logo=Netlify&logoColor=white"/><br/>
-<span style="display:inline-block; margin-bottom:5px;">버전관리</span><br/><img style="margin-bottom:10px;" src="https://img.shields.io/badge/GitHub-181717?style=flat-round&logo=GitHub&logoColor=white"/><br/>
-<span style="display:inline-block; margin-bottom:5px;">Docs</span><br/><img style="margin-bottom:10px;" src="https://img.shields.io/badge/Google Sheets-34A853?style=flat-round&logo=Google Sheets&logoColor=white"/></center>
+### Tools
+- <div style="display:flex; align-items: center; margin-right:10px;"><span>Deploy </span><img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat-round&logo=Netlify&logoColor=white"/></div>
+- <div style="display:flex; align-items: center;"><span>버전관리 </span><img src="https://img.shields.io/badge/GitHub-181717?style=flat-round&logo=GitHub&logoColor=white"/></div>
+- <div style="display:flex; align-items: center;"><span>Docs </span><img src="https://img.shields.io/badge/Google Sheets-34A853?style=flat-round&logo=Google Sheets&logoColor=white"/></div>
 
 <br/><br/>
 
