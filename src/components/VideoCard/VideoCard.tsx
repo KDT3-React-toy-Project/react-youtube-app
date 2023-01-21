@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { useContext, useEffect, useState } from 'react';
 import './VideoCard.scss';
 import { FiMoreVertical } from 'react-icons/fi';

@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { useEffect, useState } from 'react';
 import { getVideoDetail } from 'src/api/requests';
 
