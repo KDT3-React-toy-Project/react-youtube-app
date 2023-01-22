@@ -7,7 +7,6 @@ import { uploadedDate } from 'src/util/uploadedDate';
 import { Link } from 'react-router-dom';
 // import { getSearchData } from 'src/api/requests';
 import { ShowContext } from 'src/contexts/store';
-import { getSearchData } from 'src/api/requests';
 
 export default function VideoCard() {
   const ytDurationFormat = require('youtube-duration-format');
