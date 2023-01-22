@@ -11,19 +11,21 @@ function App() {
   const queryClient = new QueryClient();
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <Header setShownav={setShownav} shownav={shownav} />
-      <section
-        style={{
-          display: 'flex',
-        }}
-      >
-        <div className="contents">
-          <Sidebar setShownav={setShownav} shownav={shownav} />
-          <Outlet />
-        </div>
-      </section>
-    </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <section
+          style={{
+            display: 'flex',
+          }}
+        >
+          <div className="contents">
+            <Sidebar setShownav={setShownav} shownav={shownav} />
+            <Outlet />
+          </div>
+        </section>
+      </QueryClientProvider>
+    </>
   );
 }
 
