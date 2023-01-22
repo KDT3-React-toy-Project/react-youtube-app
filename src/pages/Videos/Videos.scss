@@ -16,6 +16,8 @@
 
 .GalleryContainer[nav-check='show'] {
   margin: 56px 0 0 240px;
+  @media (max-width: 1024px) {
+  }
 }
 
 .mainGallery {

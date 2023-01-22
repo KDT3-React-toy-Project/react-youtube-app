@@ -7,6 +7,7 @@ import { uploadedDate } from 'src/util/uploadedDate';
 import { Link } from 'react-router-dom';
 // import { getSearchData } from 'src/api/requests';
 import { ShowContext } from 'src/contexts/store';
+import { getSearchData } from 'src/api/requests';
 
 export default function VideoCard() {
   const ytDurationFormat = require('youtube-duration-format');
@@ -21,15 +22,6 @@ export default function VideoCard() {
     };
     getData();
   }, []);
-
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const res = await getSearchData('빠더너스');
-  //     console.log('res', res.data.items);
-  //     setDatas(res.data.items);
-  //   };
-  //   getData();
-  // }, []);
 
   // useEffect(() => {
   //   const getData = async () => {
