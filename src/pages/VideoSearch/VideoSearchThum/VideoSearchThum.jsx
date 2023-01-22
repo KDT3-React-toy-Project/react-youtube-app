@@ -18,7 +18,7 @@ function VideoSearchThum({ videoId }) {
     <>
       {videoData && (
         <div className="search-thumbnails">
-          <img src={videoData.snippet.thumbnails.high.url} alt={''} />
+          <img src={videoData.snippet.thumbnails.high.url} alt={videoData.snippet.title + '-thumbnail'} />
           <p>{ytDurationFormat(videoData.contentDetails.duration)}</p>
         </div>
       )}

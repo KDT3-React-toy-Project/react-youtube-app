@@ -9,7 +9,20 @@
 관련 비디오 데이터: 
 /search?part=snippet&maxResults=10&relatedToVideoId=${videoId}&type=video 
 */
+
 import axios from './axios';
+
+// 인기 비디오 데이터
+export const getPopularData = async () => {
+  try {
+    const response = await axios.get(
+      `/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResult=50`,
+    );
+    return response;
+  } catch (error: any) {
+    console.error(error.message);
+  }
+};
 
 // 검색어로 인한 비디오 데이터
 export const getSearchData = async (title: string) => {
