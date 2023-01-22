@@ -19,70 +19,60 @@ export default function VideoDetail() {
   const [channelLoading, setChannelLoading] = useState(true);
   const [commentLoading, setCommentLoading] = useState(true);
   const [relatedLoading, setRelatedLoading] = useState(true);
-  const [relatedDetailLoading, setRelatedDetailLoading] = useState(true);
-
-  const [videoData, setVideoData] = useState([]);
-  const [channelInfo, setChannelInfo] = useState([]);
-  const [commentData, setCommentData] = useState([]);
-  const [relationVideos, setRelationVideos] = useState([]);
+  // const [relatedDetailLoading, setRelatedDetailLoading] = useState(true);
 
   // 일일할당량때문에 localStorage 에 없을 경우 저장
   useEffect(() => {
-    // if (!JSON.parse(localStorage.getItem('VideoDetail'))) {
-    getVideoDetail(videoId).then((data) => {
-      // localStorage.setItem('VideoDetail', JSON.stringify(data));
-      setVideoData(data);
+    if (!JSON.parse(localStorage.getItem('VideoDetail'))) {
+      getVideoDetail(videoId).then((data) => {
+        localStorage.setItem('VideoDetail', JSON.stringify(data));
+        setVideoLoading(false);
+      });
+    } else {
       setVideoLoading(false);
-    });
-    // } else {
-    // setVideoLoading(false);
-    // }
+    }
 
-    // if (!JSON.parse(localStorage.getItem('ChannelInfo'))) {
-    getChannelInfo(channelId).then((data) => {
-      // localStorage.setItem('ChannelInfo', JSON.stringify(data));
-      setChannelInfo(data);
+    if (!JSON.parse(localStorage.getItem('ChannelInfo'))) {
+      getChannelInfo(channelId).then((data) => {
+        localStorage.setItem('ChannelInfo', JSON.stringify(data));
+        setChannelLoading(false);
+      });
+    } else {
       setChannelLoading(false);
-    });
-    // } else {
-    // setChannelLoading(false);
-    // }
+    }
 
-    // if (!JSON.parse(localStorage.getItem('Comment'))) {
-    getComment(videoId).then((data) => {
-      // localStorage.setItem('Comment', JSON.stringify(data))
-      // ;
-      setCommentData(data);
+    if (!JSON.parse(localStorage.getItem('Comment'))) {
+      getComment(videoId).then((data) => {
+        localStorage.setItem('Comment', JSON.stringify(data));
+        setCommentLoading(false);
+      });
+    } else {
       setCommentLoading(false);
-    });
-    // } else {
-    // setCommentLoading(false);
-    // }
+    }
 
-    // if (!JSON.parse(localStorage.getItem('RelationVideo'))) {
-    getRelationVideo(videoId).then((data) => {
-      localStorage.setItem('RelationVideo', JSON.stringify(data));
-      setRelationVideos(data);
+    if (!JSON.parse(localStorage.getItem('RelationVideo'))) {
+      getRelationVideo(videoId).then((data) => {
+        localStorage.setItem('RelationVideo', JSON.stringify(data));
+        setRelatedLoading(false);
+      });
+    } else {
       setRelatedLoading(false);
-    });
-    // } else {
-    // setRelatedLoading(false);
-    // }
+    }
   }, [channelId, videoId]);
 
   // 로컬에 있는 데이터로 쓰기
-  // const videoData = JSON.parse(localStorage.getItem('VideoDetail'));
-  // const channelInfo = JSON.parse(localStorage.getItem('ChannelInfo'));
-  // const commentData = JSON.parse(localStorage.getItem('Comment'));
-  // const relationVideos = JSON.parse(localStorage.getItem('RelationVideo'));
+  const videoData = JSON.parse(localStorage.getItem('VideoDetail'));
+  const channelInfo = JSON.parse(localStorage.getItem('ChannelInfo'));
+  const commentData = JSON.parse(localStorage.getItem('Comment'));
+  const relationVideos = JSON.parse(localStorage.getItem('RelationVideo'));
 
-  // const commentCount = videoData && videoData.statistics.commentCount;
-  const relatedId = relationVideos && relationVideos.map((video) => video.id.videoId);
+  const commentCount = videoData && videoData.statistics.commentCount;
+  // const relatedId = relationVideos && relationVideos.map((video) => video.id.videoId);
 
   // useEffect(() => {
   //   if (relatedId) {
   //     Promise.all(
-  //       relatedId.map(async (id) => {
+  //       relatedId.map(async (id: string) => {
   //         if (!JSON.parse(localStorage.getItem(id))) {
   //           await getVideoDetail(id).then((data) => {
   //             const res = { duration: data.contentDetails.duration, viewcount: data.statistics.viewCount };
@@ -98,7 +88,7 @@ export default function VideoDetail() {
 
   return (
     <>
-      {videoLoading || channelLoading /* || commentLoading || relatedLoading || relatedDetailLoading */ ? (
+      {videoLoading || channelLoading || commentLoading || relatedLoading /* || relatedDetailLoading */ ? (
         <h1>Loading...</h1>
       ) : (
         <section className="videoDetail">
@@ -116,11 +106,13 @@ export default function VideoDetail() {
               <ChannelInfo channelInfo={channelInfo} />
 
               {/* 댓글 */}
-              {/* <VideoComments commentData={commentData} commentCount={commentCount} /> */}
+              <VideoComments commentData={commentData} commentCount={commentCount} />
             </div>
 
             {/* 관련 동영상 */}
-            <div className="videoDetailRight">{/* <RelatedVideos relationVideos={relationVideos} /> */}</div>
+            <div className="videoDetailRight">
+              <RelatedVideos relationVideos={relationVideos} />
+            </div>
           </div>
         </section>
       )}
