@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { viewCountConverter } from 'src/util/viewCountConverter';
+// import { viewCountConverter } from 'src/util/viewCountConverter';
 import './RelatedVideos.scss';
 import { uploadedDate } from './../../util/uploadedDate';
 
@@ -17,9 +17,9 @@ export default RelatedVideos;
 
 const VideoCard = ({ video }) => {
   const navigate = useNavigate();
-  const ytDurationFormat = require('youtube-duration-format');
+  // const ytDurationFormat = require('youtube-duration-format');
 
-  const videoData = JSON.parse(localStorage.getItem(video.id.videoId));
+  // const videoData = JSON.parse(localStorage.getItem(video.id.videoId));
 
   const handleClick = (id: string, channelId: string) => {
     navigate(`/videos/watch/${id}`, { state: { channelId: channelId } });
@@ -31,7 +31,7 @@ const VideoCard = ({ video }) => {
       <div className="videoWrap">
         <div className="thumbnail">
           <img src={video.snippet.thumbnails.medium.url} alt={video.snippet.title} />
-          <div className="duration">{<span>{ytDurationFormat(videoData.duration)}</span>}</div>
+          {/* <div className="duration">{<span>{ytDurationFormat(videoData.duration)}</span>}</div> */}
         </div>
 
         {/* 텍스트 부분 */}
@@ -42,7 +42,7 @@ const VideoCard = ({ video }) => {
               <span>{video.snippet.channelTitle}</span>
             </Link>
             <div className="etc">
-              <span>조회수 {viewCountConverter(videoData.viewcount)}회</span>&nbsp;<span> • </span>&nbsp;
+              {/* <span>조회수 {viewCountConverter(videoData.viewcount)}회</span>&nbsp;<span> • </span>&nbsp; */}
               <span>{uploadedDate(video.snippet.publishedAt)}</span>
             </div>
           </div>
