@@ -31,7 +31,6 @@ export default function Header({ setShownav, shownav }: show) {
   const [user, setUser] = useState<any>();
   const inputEl = useRef<HTMLInputElement>();
 
-  console.log(user);
   useEffect(() => {
     // 로그인유지
     onUserStateChange(setUser);

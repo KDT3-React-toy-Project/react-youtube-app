@@ -13,18 +13,18 @@ function App() {
   return (
     <>
       <Header setShownav={setShownav} shownav={shownav} />
-      <QueryClientProvider client={queryClient}>
-        <section
-          style={{
-            display: 'flex',
-          }}
-        >
-          <div className="contents">
-            <Sidebar setShownav={setShownav} shownav={shownav} />
+      <section
+        style={{
+          display: 'flex',
+        }}
+      >
+        <div className="contents">
+          <Sidebar setShownav={setShownav} shownav={shownav} />
+          <QueryClientProvider client={queryClient}>
             <Outlet />
-          </div>
-        </section>
-      </QueryClientProvider>
+          </QueryClientProvider>
+        </div>
+      </section>
     </>
   );
 }
