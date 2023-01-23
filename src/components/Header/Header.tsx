@@ -78,11 +78,7 @@ export default function Header({ setShownav, shownav }: show) {
           <h1>
             <Link to="/" className="header__home-logo">
               logo
-              {!user && (
-                <>
-                  <img src="https://i.ibb.co/frTQBs7/yt-logo-rgb-dark.png" alt="yt-logo-rgb-dark" />
-                </>
-              )}
+              {!user && <img src="https://i.ibb.co/frTQBs7/yt-logo-rgb-dark.png" alt="youtube-logo-Dark" />}
               {user && (
                 <svg viewBox="0 0 97 20" preserveAspectRatio="xMidYMid meet" focusable="false">
                   <g viewBox="0 0 97 20" preserveAspectRatio="xMidYMid meet">

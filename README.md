@@ -85,18 +85,21 @@
 
 ## :pushpin: 기능 구현 목록
 
-### 1. Header
-
-- [X] 로고
-  - 클릭 시, 홈으로 이동
-- [ ] 검색창
-  - 해당 제목으로 영상 검색
-- [X] 로그인
-  - 구글 연동
+<details>
+<summary>1. Header</summary>
+<div markdown='1'>
+- [X] 로고(클릭 시, 홈으로 이동)<br/>
+- [X] 검색창<br/>
+  - 해당 제목으로 영상 검색<br/>
+- [X] 로그인<br/>
+  - 구글 연동<br/>
+  </div>
+  </details>
     <br/><br/>
 
-### 2. HOME
+<summary><h3>2. HOME</h3></summary>
 
+```
 - [X] 영상 목록
   - public -> videos -> popular.json 목업데이터 우선 사용
 
@@ -107,21 +110,26 @@
   - [X] 영상 제목
   - [X] 채널명
   - [X] 조회수 &middot; 업로드날짜
+```
 
-### 3. VideoDetail
+<summary><h3>3. VideoDetail</h3></summary>
 
+```
 - [X] 영상
 - [X] 영상 제목
 - [X] 채널명
 - [X] 영상 상세 설명
 - [X] 관련 영상 목록
 - [X] 댓글
+```
 
-### 4. 기타
+<summary><h3>4. 기타</h3></summary>
 
+```
 - [ ] 화면 렌더링 중일땐 `Loading...` 출력
 - [X] 페이지에 에러 발생 시, NotFound 페이지로 넘어감.
-- [ ] 반응형
+- [X] 반응형
+```
 
 <br/><br/>
 
@@ -138,6 +146,12 @@
     <tr>
       <td><img src="https://i.ibb.co/2yBFch9/230117-adblock.png" alt="230117-adblock" border="0"><br/>디테일 페이지에서 영상 가져올 떄 발생하는 에러</td>
       <td>크롬에 adblock이 설치되어 있어서 뜨는 에러. 무시해도 잘 작동함.</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><img src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fuser-images.githubusercontent.com%2F64674174%2F213912869-318ab25a-9faf-4940-9278-a66bc683b414.png" alt="230117-adblock" border="0"><br/><code>npm run start</code> 터미널에서 발생하는 경고 메세지</td>
+      <td>root경로에 있는 파일에 <code>GENERATE_SOURCEMAP=false</code> 추가</td>
     </tr>
   </tbody>
 </table>
