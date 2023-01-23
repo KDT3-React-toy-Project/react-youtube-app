@@ -85,21 +85,18 @@
 
 ## :pushpin: 기능 구현 목록
 
-<details>
-<summary>1. Header</summary>
-<div markdown='1'>
-- [X] 로고(클릭 시, 홈으로 이동)<br/>
-- [X] 검색창<br/>
-  - 해당 제목으로 영상 검색<br/>
-- [X] 로그인<br/>
-  - 구글 연동<br/>
-  </div>
-  </details>
+### 1. Header
+
+- [X] 로고
+  - 클릭 시, 홈으로 이동
+- [X] 검색창
+  - 해당 제목으로 영상 검색
+- [X] 로그인
+  - 구글 연동
     <br/><br/>
 
-<summary><h3>2. HOME</h3></summary>
+### 2. HOME
 
-```
 - [X] 영상 목록
   - public -> videos -> popular.json 목업데이터 우선 사용
 
@@ -110,26 +107,21 @@
   - [X] 영상 제목
   - [X] 채널명
   - [X] 조회수 &middot; 업로드날짜
-```
 
-<summary><h3>3. VideoDetail</h3></summary>
+### 3. VideoDetail
 
-```
 - [X] 영상
 - [X] 영상 제목
 - [X] 채널명
 - [X] 영상 상세 설명
 - [X] 관련 영상 목록
 - [X] 댓글
-```
 
-<summary><h3>4. 기타</h3></summary>
+### 4. 기타
 
-```
 - [ ] 화면 렌더링 중일땐 `Loading...` 출력
 - [X] 페이지에 에러 발생 시, NotFound 페이지로 넘어감.
 - [X] 반응형
-```
 
 <br/><br/>
 
