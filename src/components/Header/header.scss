@@ -23,7 +23,7 @@ button {
   top: 0;
   left: 0;
   z-index: 1000;
-  background: #0f0f0f;
+  background: $background-color;
 
   .header__start {
     display: flex;
