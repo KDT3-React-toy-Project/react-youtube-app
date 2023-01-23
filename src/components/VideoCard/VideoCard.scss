@@ -26,15 +26,20 @@
   }
 }
 
-.videoCard [nav-check='show'] {
+.videoCard[nav-check='show'] {
   @media (max-width: 1024px) {
-    max-width: 360px;
+    width: 80%;
+    max-width: 300px;
+    min-width: 240px;
   }
   @media (max-width: 768px) {
-    width: calc((100% / 2) - 10px);
+    // width: 80%;
+    width: 300px;
+    // min-width: 240px;
   }
-  @media (max-width: 600px) {
-    min-width: 300px;
+  @media (max-width: 500px) {
+    // width: 80%;
+    width: 300px;
   }
 }
 
