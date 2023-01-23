@@ -76,7 +76,7 @@ export default function Header({ setShownav, shownav }: show) {
             <Link to="/" className="header__home-logo">
               logo
               {!user && <img src="https://i.ibb.co/frTQBs7/yt-logo-rgb-dark.png" alt="youtube-logo-Dark" />}
-              {user && <img src="https://ifh.cc/g/bH5qQy.png" alt="youtubePremium-logo-Dark" />}
+              {user && <img src="https://ifh.cc/g/bH5qQy.png" alt="youtube-Premium-logo-Dark" />}
             </Link>
           </h1>
         </div>
