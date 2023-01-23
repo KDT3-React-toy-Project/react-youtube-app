@@ -1,13 +1,13 @@
-import { useState, Dispatch, SetStateAction, useRef, useEffect } from 'react';
+import { useState, Dispatch, SetStateAction, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { BiUserCircle } from 'react-icons/bi';
 import { MdLogout } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { HiBars3 } from 'react-icons/hi2';
-import { login, logout, onUserStateChange } from 'src/api/firebase/firebase';
 import User from '../User/User';
 import './header.scss';
+import { useAuthContext } from 'src/contexts/AuthContextProvider';
 
 interface show {
   shownav: boolean;
@@ -19,6 +19,7 @@ interface input {
 }
 
 export default function Header({ setShownav, shownav }: show) {
+  const { user, login, logout } = useAuthContext();
   const navigate = useNavigate();
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
@@ -29,13 +30,8 @@ export default function Header({ setShownav, shownav }: show) {
 
   const [showInput, setShowInput] = useState<boolean>(false);
   const [showDelBtn, setShowDelBtn] = useState<boolean>(false);
-  const [user, setUser] = useState<any>();
-  const inputEl = useRef<HTMLInputElement>();
 
-  useEffect(() => {
-    // 로그인유지
-    onUserStateChange(setUser);
-  }, []);
+  const inputEl = useRef<HTMLInputElement>();
 
   const onSubmit = (data: input) => {
     navigate(`videos/search/${data.inputVal}`);
