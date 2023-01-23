@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { getComment, getVideoDetail } from 'src/api/requests';
@@ -23,48 +22,41 @@ export default function VideoDetail() {
 
   // 일일할당량때문에 localStorage 에 없을 경우 저장
   useEffect(() => {
-    // if (!JSON.parse(localStorage.getItem('VideoDetail'))) {
-    getVideoDetail(videoId).then((data) => {
-      console.log('getVideoDetail >>', data);
-      localStorage.setItem('VideoDetail', JSON.stringify(data));
+    if (!JSON.parse(localStorage.getItem('VideoDetail'))) {
+      getVideoDetail(videoId).then((data) => {
+        localStorage.setItem('VideoDetail', JSON.stringify(data));
+        setVideoLoading(false);
+      });
+    } else {
       setVideoLoading(false);
-    });
-    // } else {
-    //   setVideoLoading(false);
-    // }
+    }
 
-    // if (!JSON.parse(localStorage.getItem('ChannelInfo'))) {
-    getChannelInfo(channelId).then((data) => {
-      console.log('getChannelInfo >>', data);
+    if (!JSON.parse(localStorage.getItem('ChannelInfo'))) {
+      getChannelInfo(channelId).then((data) => {
+        localStorage.setItem('ChannelInfo', JSON.stringify(data));
+        setChannelLoading(false);
+      });
+    } else {
+      setChannelLoading(false);
+    }
 
-      localStorage.setItem('ChannelInfo', JSON.stringify(data));
-      // setChannelLoading(false);
-    });
-    // } else {
-    // setChannelLoading(false);
-    // }
+    if (!JSON.parse(localStorage.getItem('Comment'))) {
+      getComment(videoId).then((data) => {
+        localStorage.setItem('Comment', JSON.stringify(data));
+        setCommentLoading(false);
+      });
+    } else {
+      setCommentLoading(false);
+    }
 
-    // if (!JSON.parse(localStorage.getItem('Comment'))) {
-    getComment(videoId).then((data) => {
-      console.log('getComment >>', data);
-
-      localStorage.setItem('Comment', JSON.stringify(data));
-      // setCommentLoading(false);
-    });
-    // } else {
-    // setCommentLoading(false);
-    // }
-
-    // if (!JSON.parse(localStorage.getItem('RelationVideo'))) {
-    getRelationVideo(videoId).then((data) => {
-      console.log('getRelationVideo >>', data);
-
-      localStorage.setItem('RelationVideo', JSON.stringify(data));
-      // setRelatedLoading(false);
-    });
-    // } else {
-    // setRelatedLoading(false);
-    // }
+    if (!JSON.parse(localStorage.getItem('RelationVideo'))) {
+      getRelationVideo(videoId).then((data) => {
+        localStorage.setItem('RelationVideo', JSON.stringify(data));
+        setRelatedLoading(false);
+      });
+    } else {
+      setRelatedLoading(false);
+    }
   }, [channelId, videoId]);
 
   // 로컬에 있는 데이터로 쓰기
@@ -95,32 +87,34 @@ export default function VideoDetail() {
 
   return (
     <>
-      {/* {videoLoading || channelLoading || commentLoading || relatedLoading || relatedDetailLoading ? (
+      {videoLoading || channelLoading || commentLoading || relatedLoading || relatedDetailLoading ? (
         <h1>Loading...</h1>
-      ) : ( */}
-      <section className="videoDetail">
-        <div className="wrap">
-          <div className="videoDetailLeft">
-            {/* 비디오 */}
-            <div id="videoWrap">
-              <iframe title="video" id="player" src={`//www.youtube.com/embed/${videoId}`} allowFullScreen></iframe>
+      ) : (
+        <section className="videoDetail">
+          <div className="wrap">
+            <div className="videoDetailLeft">
+              {/* 비디오 */}
+              <div id="videoWrap">
+                <iframe title="video" id="player" src={`//www.youtube.com/embed/${videoId}`} allowFullScreen></iframe>
+              </div>
+
+              {/* 비디오 정보 */}
+              <VideoInfo videoData={videoData} />
+
+              {/* 채널 정보 */}
+              <ChannelInfo channelInfo={channelInfo} />
+
+              {/* 댓글 */}
+              <VideoComments commentData={commentData} commentCount={commentCount} />
             </div>
 
-            {/* 비디오 정보 */}
-            {/* <VideoInfo videoData={videoData} /> */}
-
-            {/* 채널 정보 */}
-            {/* <ChannelInfo channelInfo={channelInfo} /> */}
-
-            {/* 댓글 */}
-            {/* <VideoComments commentData={commentData} commentCount={commentCount} /> */}
+            {/* 관련 동영상 */}
+            <div className="videoDetailRight">
+              <RelatedVideos relationVideos={relationVideos} />
+            </div>
           </div>
-
-          {/* 관련 동영상 */}
-          <div className="videoDetailRight">{/* <RelatedVideos relationVideos={relationVideos} /> */}</div>
-        </div>
-      </section>
-      {/* )} */}
+        </section>
+      )}
     </>
   );
 }
