@@ -139,11 +139,13 @@
       <td><img src="https://i.ibb.co/2yBFch9/230117-adblock.png" alt="230117-adblock" border="0"><br/>디테일 페이지에서 영상 가져올 떄 발생하는 에러</td>
       <td>크롬에 adblock이 설치되어 있어서 뜨는 에러. 무시해도 잘 작동함.</td>
     </tr>
-  </tbody>
-  <tbody>
     <tr>
       <td><img src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fuser-images.githubusercontent.com%2F64674174%2F213912869-318ab25a-9faf-4940-9278-a66bc683b414.png" alt="230117-adblock" border="0"><br/><code>npm run start</code> 터미널에서 발생하는 경고 메세지</td>
       <td>root경로에 있는 파일에 <code>GENERATE_SOURCEMAP=false</code> 추가</td>
     </tr>
-  </tbody>
+    <tr>
+      <td><img width="100%" src="https://i.ibb.co/3vbDvSg/2023-01-19-160931.png" alt="230117-adblock" border="0"><img width="100%" src="https://i.ibb.co/VJtJ6yv/image.png" alt="image" border="0"><br/>netlify 배포 에러</td>
+      <td><img width="100%" src="https://i.ibb.co/VT6bJzg/2023-01-19-221714.png">사용하지 않는 코드나 import 정리하기</td>
+    </tr>
+    </tbody>
 </table>
