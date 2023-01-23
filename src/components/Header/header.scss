@@ -23,7 +23,7 @@ button {
   top: 0;
   left: 0;
   z-index: 1000;
-  background: #0f0f0f;
+  background: $background-color;
 
   .header__start {
     display: flex;
@@ -40,6 +40,7 @@ button {
       width: 40px;
       padding: 8px;
       border-radius: 50%;
+      color: $main-text-color;
 
       &:hover {
         background: #333;
@@ -62,10 +63,6 @@ button {
       padding: 18px 14px 18px 16px;
       position: relative;
 
-      svg {
-        width: 97px;
-        height: 20px;
-      }
       img {
         width: 97px;
       }

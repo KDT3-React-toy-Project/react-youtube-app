@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
 import './VideoCard.scss';
 import { FiMoreVertical } from 'react-icons/fi';
-import axios from 'axios';
 import { viewCountConverter } from 'src/util/viewCountConverter';
 import { uploadedDate } from 'src/util/uploadedDate';
 import { Link } from 'react-router-dom';
 // import { getSearchData } from 'src/api/requests';
 import { ShowContext } from 'src/contexts/store';
+import { getPopularData } from 'src/api/requests';
 
 export default function VideoCard() {
   const ytDurationFormat = require('youtube-duration-format');
@@ -15,9 +15,9 @@ export default function VideoCard() {
 
   useEffect(() => {
     const getData = async () => {
-      const res = (await axios.get('./videos/popular.json')).data.items;
-      console.log('res', res);
-      setDatas(res);
+      // const res = (await axios.get('./videos/popular.json')).data.items;
+      const res = await getPopularData();
+      setDatas(res.data.items);
     };
     getData();
   }, []);

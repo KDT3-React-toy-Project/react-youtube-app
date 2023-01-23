@@ -17,7 +17,7 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #aaa;
+    background-color: $secondary-text-color;
     border-radius: 10px;
 
     &:hover {
