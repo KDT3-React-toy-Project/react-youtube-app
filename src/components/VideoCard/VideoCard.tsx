@@ -31,15 +31,6 @@ export default function VideoCard() {
   //   getData();
   // }, []);
 
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const res = await getSearchData('빠더너스');
-  //     console.log('res', res.data.items);
-  //     setDatas(res.data.items);
-  //   };
-  //   getData();
-  // }, []);
-
   return (
     <>
       {datas.map((data) => (
