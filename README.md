@@ -144,9 +144,12 @@
       <td>root경로에 있는 파일에 <code>GENERATE_SOURCEMAP=false</code> 추가</td>
     </tr>
     <tr>
-      <td><a href="https://ibb.co/3vbDvSg"><img src="https://i.ibb.co/3vbDvSg/2023-01-19-160931.png" alt="2023-01-19-160931" border="0"></a><a href="https://ibb.co/VJtJ6yv"><img src="https://i.ibb.co/VJtJ6yv/image.png" alt="image" border="0"></a><br/>netlify 배포 에러</td>
-      <td> <a href="https://ibb.co/VT6bJzg"><img src="https://i.ibb.co/VT6bJzg/2023-01-19-221714.png" alt="2023-01-19-221714" border="0"></a> <br/>사용하지 않는 코드나 import 정리하기</td>
+      <td><img src="https://i.ibb.co/qC8tCmT/2023-01-19-160931.png" alt="2023-01-19-160931" border="0"><img src="https://i.ibb.co/rFmF9PZ/image.png" alt="image" border="0"><br/>netlify 배포 에러</td>
+      <td><img src="https://i.ibb.co/CQL4mYb/2023-01-19-221714.png" alt="2023-01-19-221714" border="0"><br/>사용하지 않는 코드나 import 정리하기</td>
+    </tr>
+    <tr>
+      <td><img src="https://i.ibb.co/54s4zCC/image.png" alt="image" border="0"></td>
+      <td>상세 페이지에 동영상을 제외한 정보들은 youtube api 의 일일할당량 때문에 localStorage 로 저장하여 구현하고 있어서 첫번째로 들어간 상세페이지의 동영상 정보들이 출력됩니다 </td>
     </tr>
     </tbody>
 </table>
-
