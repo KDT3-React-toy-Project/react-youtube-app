@@ -16,7 +16,7 @@ import instance from './axios';
 export const getPopularData = async () => {
   try {
     const response = await instance.get(
-      `videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50`,
+      `videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=KR&maxResults=50`,
     );
     return response;
   } catch (error: any) {
