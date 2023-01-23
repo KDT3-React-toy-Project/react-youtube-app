@@ -8,6 +8,7 @@ import { HiBars3 } from 'react-icons/hi2';
 import User from '../User/User';
 import './header.scss';
 import { useAuthContext } from 'src/contexts/AuthContextProvider';
+import { DeleteBtnIcon, InputCloseBtnIcon, SearchBtnIcon, MicBtnicons, ShowSearchBtnIcon } from './../Icons/icons';
 
 interface show {
   shownav: boolean;
@@ -93,11 +94,7 @@ export default function Header({ setShownav, shownav }: show) {
               toggleInput();
             }}
           >
-            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
-              <g mirror-in-rtl="">
-                <path d="M21,11v1H5.64l6.72,6.72l-0.71,0.71L3.72,11.5l7.92-7.92l0.71,0.71L5.64,11H21z" fill="#fff" />
-              </g>
-            </svg>
+            <InputCloseBtnIcon />
           </button>
           <form onSubmit={handleSubmit(onSubmit)} {...rest}>
             <div className="search-input-wrap">
@@ -123,35 +120,17 @@ export default function Header({ setShownav, shownav }: show) {
                   }}
                 >
                   검색 내용 지우기
-                  <svg viewBox="0 0 50 50">
-                    <path
-                      d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"
-                      fill="#fff"
-                    />
-                  </svg>
+                  <DeleteBtnIcon />
                 </button>
               )}
             </div>
             <button type="submit" className="search-btn">
               검색
-              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
-                <g>
-                  <path
-                    d="M20.87,20.17l-5.59-5.59C16.35,13.35,17,11.75,17,10c0-3.87-3.13-7-7-7s-7,3.13-7,7s3.13,7,7,7c1.75,0,3.35-0.65,4.58-1.71 l5.59,5.59L20.87,20.17z M10,16c-3.31,0-6-2.69-6-6s2.69-6,6-6s6,2.69,6,6S13.31,16,10,16z"
-                    fill="#fff"
-                  ></path>
-                </g>
-              </svg>
+              <SearchBtnIcon />
             </button>
             <button type="button" className="voice-btn">
               음성인식
-              <svg>
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path
-                  d="M12 15c1.66 0 2.99-1.34 2.99-3L15 6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 15 6.7 12H5c0 3.42 2.72 6.23 6 6.72V22h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"
-                  fill="#fff"
-                ></path>
-              </svg>
+              <MicBtnicons/>
             </button>
           </form>
         </div>
@@ -163,14 +142,7 @@ export default function Header({ setShownav, shownav }: show) {
               toggleInput();
             }}
           >
-            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
-              <g>
-                <path
-                  d="M20.87,20.17l-5.59-5.59C16.35,13.35,17,11.75,17,10c0-3.87-3.13-7-7-7s-7,3.13-7,7s3.13,7,7,7c1.75,0,3.35-0.65,4.58-1.71 l5.59,5.59L20.87,20.17z M10,16c-3.31,0-6-2.69-6-6s2.69-6,6-6s6,2.69,6,6S13.31,16,10,16z"
-                  fill="#fff"
-                ></path>
-              </g>
-            </svg>
+            <ShowSearchBtnIcon />
           </button>
           {user && <User user={user} />}
           {!user && (
